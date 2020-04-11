@@ -1,8 +1,8 @@
 .LostWorld {
-    background-color: #61dafb;
+    /*background-color: #61dafb;*/
     height: 100%;
     width: 100%;
-    background-image: url("../../assets/images/background.jpg");
+    /*background-image: url("../../assets/images/background.jpg");*/
     /*background-size: contain;*/
     /*background-repeat: no-repeat;*/
 }
@@ -10,4 +10,13 @@
 .LostWorld img {
     width: 100%;
     filter: brightness(60%);
+}
+
+.Carousel {
+    max-height: 300px;
+    max-width: 800px;
+    width: 60%;
+    margin: 5% 23%;
+    position: fixed;
+    display: inline-block;
 }

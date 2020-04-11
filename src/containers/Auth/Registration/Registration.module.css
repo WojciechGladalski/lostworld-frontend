@@ -1,10 +1,11 @@
 .Registration {
-    margin: 60px auto;
+    margin: 5% 25%;
     width: 50%;
     text-align: center;
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     padding: 10px;
+    position: fixed;
     box-sizing: border-box;
     background-color: #eeeeee;
     opacity: 0.88;
