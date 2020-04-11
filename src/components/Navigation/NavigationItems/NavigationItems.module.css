@@ -6,6 +6,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    float: left;
 }
 
 @media (min-width: 500px) {

@@ -1,0 +1,34 @@
+.Submenu {
+    width: 856px;
+    /*height: 30px;*/
+    margin: auto;
+}
+
+.Submenu ul {
+    list-style: none;
+    position: fixed;
+    z-index: 100;
+    left: 142px;
+}
+
+.Submenu ul li {
+    width: 160px;
+    background: green;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-right: 2px solid gold;
+    border-bottom: 1px solid darkslategrey;
+    margin-top: -1px;
+}
+
+.Submenu ul li:hover {
+    background: darkgreen;
+}
+
+.Submenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: Jokerman;
+}
