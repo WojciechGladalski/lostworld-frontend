@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import classes from './Registration.module.css';
 import Input from '../../../components/UI/Input/Input';
-import {AxiosInstance as axios} from "axios";
+import axios from "axios";
 
 class Registration extends Component {
 
@@ -127,19 +127,31 @@ class Registration extends Component {
         };
         console.log(registerData);
 
-        axios.post("users/register", registerData)
-            .then(response => console.log(response))
-            .then(response => {
-                this.setState({
-                    loading: false
-                });
+        axios({
+            method: 'post',
+            url: "http://fdfb6477.ngrok.io/users/register",
+            data: registerData
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (response) {
+                console.log(response);
+            })
 
-            })
-            .catch(err => {
-                this.setState({
-                    loading: false
-                })
-            })
+        // axios.post("http://fdfb6477.ngrok.io/users/register", registerData)
+        //     .then(response => console.log(response))
+        //     .then(response => {
+        //         this.setState({
+        //             loading: false
+        //         });
+        //
+        //     })
+        //     .catch(err => {
+        //         this.setState({
+        //             loading: false
+        //         })
+        //     })
 
         // this.props.onRegister(
         //     this.state.registrationForm.username.value,
