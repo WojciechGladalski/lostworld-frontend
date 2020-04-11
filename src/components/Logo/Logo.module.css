@@ -16,6 +16,8 @@
     position: relative;
     left: 20px;
     padding: 0;
+    top: 5px;
     font-family: Jokerman;
-    letter-spacing: 12px;
+    letter-spacing: 16px;
+    font-size: 40px;
 }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './Login.module.css';
 import Input from "../../../components/UI/Input/Input";
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 
 class Login extends Component {
 
@@ -184,7 +185,8 @@ class Login extends Component {
             <div className={classes.Login}>
                 <form onSubmit={this.loginHandler}>
                     {form}
-                    <button onClick={this.loginHandler}>Zaloguj</button>
+                    {/*<button onClick={this.loginHandler}>Zaloguj</button>*/}
+                    <Button variant="success" onClick={this.loginHandler}>ZALOGUJ</Button>
                 </form>
             </div>
         );
