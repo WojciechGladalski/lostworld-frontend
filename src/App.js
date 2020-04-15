@@ -20,6 +20,7 @@ class App extends Component {
                 }
                 }/>
                 <Route path="/register" component={Register}/>
+                <Route path="/myProfile"/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
         </Layout>

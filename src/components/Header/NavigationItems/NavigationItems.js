@@ -35,10 +35,11 @@ function amisawyer() {
 
 const navigationItems = (props) => (
     <ul className={classes.NavigationItems}>
+        <NavigationItem link="/myProfile">PROFIL</NavigationItem>
         <NavigationItem link="/login">ZALOGUJ</NavigationItem>
         <NavigationItem link="/register">ZAREJESTRUJ</NavigationItem>
         <NavigationItem link="/logout">WYLOGUJ</NavigationItem>
-        <button onClick={amisawyer}>AM I SAWYER?!</button>
+        {/*<button onClick={amisawyer}>AM I SAWYER?!</button>*/}
     </ul>
 );
 
