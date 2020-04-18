@@ -45,6 +45,8 @@
 
 .ProfileContent h3 {
     margin: 0 10px;
+    color: #2E7D32;
+    letter-spacing: 1px;
 }
 
 .ProfileMenu {
@@ -55,13 +57,17 @@
 
 .ProfileMenu li {
     display: inline-block;
-    width: 150px;
-    font-size: 20px;
+    width: 170px;
+    font-size: 17px;
     color: white;
     text-align: center;
     padding: 5px 15px;
     background-color: grey;
     border: 1px solid white;
+}
+
+.ProfileMenu li:last-child {
+    width: 200px;
 }
 
 .TravelPlans {
@@ -77,6 +83,10 @@
     padding-top: 10px;
 }
 
+.TravelPlans div ul li {
+    padding: 5px 0;
+}
+
 .Map {
     /*margin: 10px;*/
 }
@@ -85,20 +95,24 @@
     width: 450px;
     height: 200px;
     background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
 }
 
 .Albums div {
     height: 160px;
     background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
 }
 
 .Articles div {
     height: 200px;
     background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
 }
 
 .Following div {
     height: 200px;
     background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
     margin-bottom: 60px;
 }

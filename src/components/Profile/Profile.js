@@ -13,12 +13,13 @@ const profile = props => (
         <div className={classes.ProfileContent}>
             <div style={{margin: '-10px 0 0 -40px'}}>
                 <ul className={classes.ProfileMenu}>
-                    <li>Menu 1</li>
-                    <li>Menu 2</li>
-                    <li>Menu 3</li>
-                    <li>Menu 4</li>
-                    <li>Menu 5</li>
-                    <li>Menu 6</li>
+                    <li>Mapa</li>
+                    <li>Plany podróży</li>
+                    <li>Miejsca</li>
+                    <li>Zdjęcia</li>
+                    <li>Artykuły</li>
+                    <li>Znajomi</li>
+                    <li>Panel administratora</li>
                 </ul>
             </div>
             <div className={classes.TravelPlans}>
