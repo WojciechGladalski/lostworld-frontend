@@ -1,0 +1,73 @@
+.Sidebar {
+    /*height: 100%;*/
+    width: 250px;
+    /*top: 96px;*/
+    /*bottom: 40px;*/
+    left: 0;
+    background-color: dimgrey;
+    /*position: absolute;*/
+    /*z-index: 5;*/
+    border-right: 2px solid black;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    float: left;
+}
+
+.ProfilePhoto {
+    height: 250px;
+    width: 100%;
+    padding: 0;
+    color: black;
+    background-color: #cccccc;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+.Motto {
+    height: 100px;
+}
+
+.UserInfo {
+    height: 150px;
+    border-top: 2px solid black;
+}
+
+.Friends {
+    border-top: 2px solid black;
+    height: 200px;
+}
+
+.ProfileContent {
+    margin-left: 250px;
+}
+
+.ProfileMenu {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.ProfileMenu li {
+    display: inline-block;
+    width: 150px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 5px 15px;
+    background-color: grey;
+    border: 1px solid white;
+}
+
+.TravelPlans {
+    padding: 10px 40px;
+}
+
+.TravelPlans div {
+    border: 1.5px solid dimgrey;
+    background-color: beige;
+}
+
+.TravelPlans div ul {
+    padding-top: 10px;
+}
+

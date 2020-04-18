@@ -5,6 +5,7 @@ import Register from './containers/Auth/Registration/Registration';
 import Login from './containers/Auth/Login/Login';
 import LostWorld from './containers/LostWorld/LostWorld';
 import './App.module.css';
+import Profile from './components/Profile/Profile'
 
 class App extends Component {
 
@@ -20,7 +21,7 @@ class App extends Component {
                 }
                 }/>
                 <Route path="/register" component={Register}/>
-                <Route path="/myProfile"/>
+                <Route path="/myProfile" component={Profile}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
         </Layout>
