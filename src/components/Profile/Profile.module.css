@@ -1,12 +1,8 @@
 .Sidebar {
-    /*height: 100%;*/
+    height: 700px;
     width: 250px;
-    /*top: 96px;*/
-    /*bottom: 40px;*/
     left: 0;
-    background-color: dimgrey;
-    /*position: absolute;*/
-    /*z-index: 5;*/
+    background: linear-gradient(#eeeeee, dimgrey);
     border-right: 2px solid black;
     text-align: center;
     vertical-align: center;
@@ -40,11 +36,21 @@
 
 .ProfileContent {
     margin-left: 250px;
+    padding: 10px 40px;
+}
+
+.ProfileContent div {
+    margin: 20px 10px;
+}
+
+.ProfileContent h3 {
+    margin: 0 10px;
 }
 
 .ProfileMenu {
     list-style: none;
     margin-left: -40px;
+    padding: -10px -40px;
 }
 
 .ProfileMenu li {
@@ -59,15 +65,40 @@
 }
 
 .TravelPlans {
-    padding: 10px 40px;
+
 }
 
 .TravelPlans div {
-    border: 1.5px solid dimgrey;
-    background-color: beige;
+    border: 2px solid #bbbbbb;
+    background-color: #eeeeee;
 }
 
 .TravelPlans div ul {
     padding-top: 10px;
 }
 
+.Map {
+    /*margin: 10px;*/
+}
+
+.Map div {
+    width: 450px;
+    height: 200px;
+    background-color: #eeeeee;
+}
+
+.Albums div {
+    height: 160px;
+    background-color: #eeeeee;
+}
+
+.Articles div {
+    height: 200px;
+    background-color: #eeeeee;
+}
+
+.Following div {
+    height: 200px;
+    background-color: #eeeeee;
+    margin-bottom: 60px;
+}

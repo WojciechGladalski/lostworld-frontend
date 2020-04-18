@@ -11,7 +11,7 @@ const profile = props => (
             <div className={classes.Friends}>Box ze znajomymi</div>
         </nav>
         <div className={classes.ProfileContent}>
-            <div>
+            <div style={{margin: '-10px 0 0 -40px'}}>
                 <ul className={classes.ProfileMenu}>
                     <li>Menu 1</li>
                     <li>Menu 2</li>
@@ -22,7 +22,7 @@ const profile = props => (
                 </ul>
             </div>
             <div className={classes.TravelPlans}>
-                <h2>Moje plany podróży</h2>
+                <h3>MOJE PLANY PODRÓŻY</h3>
                 <div>
                     <ul>
                         <li>Plan 1</li>
@@ -31,12 +31,24 @@ const profile = props => (
                     </ul>
                 </div>
             </div>
-            <div>Odwiedzone kraje (mapa)</div>
-            <div>Moje albumy</div>
-            <div>Moje artykuły</div>
-            <div>Obserwowani użytkownicy</div>
+            <div className={classes.Map}>
+                <h3>ODWIEDZONE KRAJE (MAPA)</h3>
+                <div></div>
+            </div>
+            <div className={classes.Albums}>
+                <h3>MOJE ALBUMY</h3>
+                <div></div>
+            </div>
+            <div className={classes.Articles}>
+                <h3>MOJE ARTYKUŁY</h3>
+                <div></div>
+            </div>
+            <div className={classes.Following}>
+                <h3>OBSERWOWANI UŻYTKOWNICY</h3>
+                <div></div>
+            </div>
         </div>
-        <div style={{clear: 'both'}}></div>
+        {/*<div style={{clear: 'both'}}></div>*/}
 
     </Aux>
 
