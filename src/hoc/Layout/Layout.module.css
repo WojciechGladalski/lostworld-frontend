@@ -1,7 +1,9 @@
 .Content {
-    margin-top: 65px;
+    margin-top: 96px;
     height: 620px;
+    background: linear-gradient(#eeeeee, #cccccc);
     background-size: cover;
-    background-position: center;
-    background-image: url("../../assets/images/background.jpg");
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-image: url("../../assets/images/background.jpg");*/
 }
