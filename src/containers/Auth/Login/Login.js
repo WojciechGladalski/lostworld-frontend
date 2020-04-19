@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import classes from './Login.module.css';
+import {connect} from "react-redux";
 import Input from "../../../components/UI/Input/Input";
-import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import * as actions from '../../../store/actions/index'
 
 class Login extends Component {
 
@@ -86,77 +87,27 @@ class Login extends Component {
             roles: null
         }
 
-        // const formData = new FormData();
-        // // formData.append('id', loginData.id);
-        // formData.append('username', loginData.username);
-        // formData.append('email', loginData.email);
-        // formData.append('password', loginData.password);
-        // formData.append('enabled', loginData.enabled);
-        // formData.append('roles', loginData.roles);
-
         console.log(loginData);
 
-        // axios.post("http://10.5.91.132:8080/users/login", loginData)
-        //     .then(response => console.log(response))
-        //     .then(response => {
-        //         const loginStatus = response.data.status;
-        //         if (loginStatus === 403) {
-        //             console.log("Taki user już istnieje, albo niepoprawne hasło!")
-        //         } else if (loginStatus === 200) {
-        //             console.log("Udało się zalogować!")
-        //         } else {
-        //             console.log("Nieoczekiwany błąd!")
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
-
-        // fetch("http://4cda7179.ngrok.io/users/login", {
-        //     method: 'POST',
-        //     // mode: "no-cors",
-        //     headers: {
-        //         // 'Access-Control-Allow-Origin': "*",
-        //         // 'Access-Control-Allow-Headers': "*",
-        //         // 'Cross-Origin-Resource-Policy': 'cross-origin',
-        //         'Content-Type': 'multipart/form-data',
-        //         'Vary': 'Access-Control-Request-Headers'
-        //     },
-        //     body: formData
+        // axios({
+        //     method: 'post',
+        //     url: 'http://84564816.ngrok.io/users/login',
+        //     data: {
+        //         username: loginData.username,
+        //         password: loginData.password
+        //     }
         // })
-        //     .then(response => console.log(response))
-        //     .then(response => {
-        //         const loginStatus = response.data.status;
-        //         if (loginStatus === 403) {
-        //             console.log("Taki user już istnieje, albo niepoprawne hasło!")
-        //         } else if (loginStatus === 200) {
-        //             console.log("Udało się zalogować!")
-        //         } else {
-        //             console.log("Nieoczekiwany błąd!")
-        //         }
+        //     .then(function (response) {
+        //         //handle success
+        //         console.log(response);
+        //
+        //         localStorage.setItem('token', response.data.accessToken)
         //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
-
-        axios({
-            method: 'post',
-            url: 'http://fdfb6477.ngrok.io/users/login',
-            data: {
-                username: loginData.username,
-                password: loginData.password
-            }
-        })
-            .then(function (response) {
-                //handle success
-                console.log(response);
-
-                localStorage.setItem('token', response.data.accessToken)
-            })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
-            });
+        //     .catch(function (response) {
+        //         //handle error
+        //         console.log(response);
+        //     });
+        this.props.onAuth(loginData.username, loginData.password);
     };
 
     render() {
@@ -194,4 +145,10 @@ class Login extends Component {
 
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (username, password) => dispatch(actions.auth(username, password))
+    }
+};
+
+export default connect(null, mapDispatchToProps)(Login);
