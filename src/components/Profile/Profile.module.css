@@ -1,0 +1,118 @@
+.Sidebar {
+    height: 700px;
+    width: 250px;
+    left: 0;
+    background: linear-gradient(#eeeeee, dimgrey);
+    border-right: 2px solid black;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    float: left;
+}
+
+.ProfilePhoto {
+    height: 250px;
+    width: 100%;
+    padding: 0;
+    color: black;
+    background-color: #cccccc;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+.Motto {
+    height: 100px;
+}
+
+.UserInfo {
+    height: 150px;
+    border-top: 2px solid black;
+}
+
+.Friends {
+    border-top: 2px solid black;
+    height: 200px;
+}
+
+.ProfileContent {
+    margin-left: 250px;
+    padding: 10px 40px;
+}
+
+.ProfileContent div {
+    margin: 20px 10px;
+}
+
+.ProfileContent h3 {
+    margin: 0 10px;
+    color: #2E7D32;
+    letter-spacing: 1px;
+}
+
+.ProfileMenu {
+    list-style: none;
+    margin-left: -40px;
+    padding: -10px -40px;
+}
+
+.ProfileMenu li {
+    display: inline-block;
+    width: 170px;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 5px 15px;
+    background-color: grey;
+    border: 1px solid white;
+}
+
+.ProfileMenu li:last-child {
+    width: 200px;
+}
+
+.TravelPlans {
+
+}
+
+.TravelPlans div {
+    border: 2px solid #bbbbbb;
+    background-color: #eeeeee;
+}
+
+.TravelPlans div ul {
+    padding-top: 10px;
+}
+
+.TravelPlans div ul li {
+    padding: 5px 0;
+}
+
+.Map {
+    /*margin: 10px;*/
+}
+
+.Map div {
+    width: 450px;
+    height: 200px;
+    background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
+}
+
+.Albums div {
+    height: 160px;
+    background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
+}
+
+.Articles div {
+    height: 200px;
+    background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
+}
+
+.Following div {
+    height: 200px;
+    background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
+    margin-bottom: 60px;
+}

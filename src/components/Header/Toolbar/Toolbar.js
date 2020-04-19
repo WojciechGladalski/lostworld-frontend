@@ -14,9 +14,9 @@ const toolbar = (props) => (
             </nav>
 
         </header>
-        <div>
-            <Submenu/>
-        </div>
+        {/*<div>*/}
+        {/*    <Submenu/>*/}
+        {/*</div>*/}
     </div>
 );
 
