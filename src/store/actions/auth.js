@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import {AxiosInstance as axios} from "axios";
+import axios from "axios";
 
 export const authStart = () => {
     return {
@@ -7,11 +7,10 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = (token, userId) => {
+export const authSuccess = (token) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
-        idToken: token,
-        userId: userId
+        idToken: token
     };
 };
 
@@ -22,27 +21,48 @@ export const authFail = (error) => {
     };
 };
 
-export const auth = (username, email, password) => {
+export const logout = () => {
+    localStorage.clear();
+    window.location.href = '/';
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    };
+};
+
+export const auth = (username, password) => {
     return dispatch => {
         dispatch(authStart());
 
-        const authData = {
-            id: null,
+        const loginData = {
             username: username,
-            email: email,
             password: password,
-            enabled: 0,
-            roles: null
         };
 
-        axios.post("users/register.json", authData)
-            .then(response => {
-                console.log(authData);
-                dispatch(authSuccess(response.data));
+        axios({
+            method: 'post',
+            url: 'http://b308384c.ngrok.io/users/login',
+            data: loginData
+        })
+            .then(function (response) {
+                //handle success
+                console.log(response);
 
+                localStorage.setItem('token', response.data.accessToken);
+
+                dispatch(authSuccess(response.data.accessToken))
             })
-            .catch(err => {
-                dispatch(authFail(err));
-            })
+            .catch(function (response) {
+                //handle error
+                console.log(response);
+            });
     };
+};
+
+export const authCheckState = () => {
+    return dispatch => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            dispatch(logout());
+        }
+    }
 };
