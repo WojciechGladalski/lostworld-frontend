@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import classes from './Login.module.css';
+import {connect} from "react-redux";
 import Input from "../../../components/UI/Input/Input";
-import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import * as actions from '../../../store/actions/index'
 
 class Login extends Component {
 
@@ -36,9 +37,9 @@ class Login extends Component {
                 touched: false
             }
         }
-    }
+    };
 
-    checkValidity(value, rules) {
+    checkValidity = (value, rules) => {
         let isValid = true;
 
         if (!rules) {
@@ -59,7 +60,7 @@ class Login extends Component {
         }
 
         return isValid;
-    }
+    };
 
     inputChangedHandler = (event, inputName) => {
         const updatedForm = {
@@ -70,9 +71,9 @@ class Login extends Component {
                 valid: this.checkValidity(event.target.value, this.state.loginForm[inputName].validation),
                 touched: true
             }
-        }
+        };
         this.setState({loginForm: updatedForm});
-    }
+    };
 
     loginHandler = (event) => {
         event.preventDefault();
@@ -84,79 +85,10 @@ class Login extends Component {
             password: this.state.loginForm.password.value,
             enabled: 0,
             roles: null
-        }
-
-        // const formData = new FormData();
-        // // formData.append('id', loginData.id);
-        // formData.append('username', loginData.username);
-        // formData.append('email', loginData.email);
-        // formData.append('password', loginData.password);
-        // formData.append('enabled', loginData.enabled);
-        // formData.append('roles', loginData.roles);
-
+        };
         console.log(loginData);
 
-        // axios.post("http://10.5.91.132:8080/users/login", loginData)
-        //     .then(response => console.log(response))
-        //     .then(response => {
-        //         const loginStatus = response.data.status;
-        //         if (loginStatus === 403) {
-        //             console.log("Taki user już istnieje, albo niepoprawne hasło!")
-        //         } else if (loginStatus === 200) {
-        //             console.log("Udało się zalogować!")
-        //         } else {
-        //             console.log("Nieoczekiwany błąd!")
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
-
-        // fetch("http://4cda7179.ngrok.io/users/login", {
-        //     method: 'POST',
-        //     // mode: "no-cors",
-        //     headers: {
-        //         // 'Access-Control-Allow-Origin': "*",
-        //         // 'Access-Control-Allow-Headers': "*",
-        //         // 'Cross-Origin-Resource-Policy': 'cross-origin',
-        //         'Content-Type': 'multipart/form-data',
-        //         'Vary': 'Access-Control-Request-Headers'
-        //     },
-        //     body: formData
-        // })
-        //     .then(response => console.log(response))
-        //     .then(response => {
-        //         const loginStatus = response.data.status;
-        //         if (loginStatus === 403) {
-        //             console.log("Taki user już istnieje, albo niepoprawne hasło!")
-        //         } else if (loginStatus === 200) {
-        //             console.log("Udało się zalogować!")
-        //         } else {
-        //             console.log("Nieoczekiwany błąd!")
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
-
-        axios({
-            method: 'post',
-            url: 'http://fdfb6477.ngrok.io/users/login',
-            data: {
-                username: loginData.username,
-                password: loginData.password
-            }
-        })
-            .then(function (response) {
-                //handle success
-                console.log(response);
-
-                localStorage.setItem('token', response.data.accessToken)
-            })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
-            });
+        this.props.onLogin(loginData.username, loginData.password);
     };
 
     render() {
@@ -194,4 +126,10 @@ class Login extends Component {
 
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: (username, password) => dispatch(actions.login(username, password))
+    }
+};
+
+export default connect(null, mapDispatchToProps)(Login);
