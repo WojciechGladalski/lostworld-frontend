@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from "axios";
+import {API_URL} from '../../shared/constants';
 
 export const authStart = () => {
     return {
@@ -23,13 +24,13 @@ export const authFail = (error) => {
 
 export const logout = () => {
     localStorage.clear();
-    window.location.href = '/';
+    // window.location.href = '/';
     return {
         type: actionTypes.AUTH_LOGOUT
     };
 };
 
-export const auth = (username, password) => {
+export const login = (username, password) => {
     return dispatch => {
         dispatch(authStart());
 
@@ -40,7 +41,7 @@ export const auth = (username, password) => {
 
         axios({
             method: 'post',
-            url: 'http://b308384c.ngrok.io/users/login',
+            url: API_URL + 'users/login',
             data: loginData
         })
             .then(function (response) {
@@ -56,6 +57,24 @@ export const auth = (username, password) => {
                 console.log(response);
             });
     };
+};
+
+export const register = (registerData) => {
+    return dispatch => {
+        dispatch(authStart());
+
+        axios({
+            method: 'post',
+            url: API_URL + "users/register",
+            data: registerData
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (response) {
+                console.log(response);
+            })
+    }
 };
 
 export const authCheckState = () => {

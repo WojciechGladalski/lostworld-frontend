@@ -37,9 +37,9 @@ class Login extends Component {
                 touched: false
             }
         }
-    }
+    };
 
-    checkValidity(value, rules) {
+    checkValidity = (value, rules) => {
         let isValid = true;
 
         if (!rules) {
@@ -60,7 +60,7 @@ class Login extends Component {
         }
 
         return isValid;
-    }
+    };
 
     inputChangedHandler = (event, inputName) => {
         const updatedForm = {
@@ -71,9 +71,9 @@ class Login extends Component {
                 valid: this.checkValidity(event.target.value, this.state.loginForm[inputName].validation),
                 touched: true
             }
-        }
+        };
         this.setState({loginForm: updatedForm});
-    }
+    };
 
     loginHandler = (event) => {
         event.preventDefault();
@@ -85,29 +85,10 @@ class Login extends Component {
             password: this.state.loginForm.password.value,
             enabled: 0,
             roles: null
-        }
-
+        };
         console.log(loginData);
 
-        // axios({
-        //     method: 'post',
-        //     url: 'http://84564816.ngrok.io/users/login',
-        //     data: {
-        //         username: loginData.username,
-        //         password: loginData.password
-        //     }
-        // })
-        //     .then(function (response) {
-        //         //handle success
-        //         console.log(response);
-        //
-        //         localStorage.setItem('token', response.data.accessToken)
-        //     })
-        //     .catch(function (response) {
-        //         //handle error
-        //         console.log(response);
-        //     });
-        this.props.onAuth(loginData.username, loginData.password);
+        this.props.onLogin(loginData.username, loginData.password);
     };
 
     render() {
@@ -147,7 +128,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAuth: (username, password) => dispatch(actions.auth(username, password))
+        onLogin: (username, password) => dispatch(actions.login(username, password))
     }
 };
 

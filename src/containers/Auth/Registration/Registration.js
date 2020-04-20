@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import classes from './Registration.module.css';
+import {connect} from "react-redux";
 import Input from '../../../components/UI/Input/Input';
-import axios from "axios";
+import * as actions from '../../../store/actions/index'
 import Button from "react-bootstrap/Button";
 
 class Registration extends Component {
@@ -71,7 +72,7 @@ class Registration extends Component {
     //
     // }
 
-    checkValidity(value, rules) {
+    checkValidity = (value, rules) => {
         let isValid = true;
 
         if (!rules) {
@@ -92,7 +93,7 @@ class Registration extends Component {
         }
 
         return isValid;
-    }
+    };
 
     inputChangedHandler = (event, inputName) => {
         const updatedForm = {
@@ -103,7 +104,7 @@ class Registration extends Component {
                 valid: this.checkValidity(event.target.value, this.state.registrationForm[inputName].validation),
                 touched: true
             }
-        }
+        };
         this.setState({registrationForm: updatedForm});
     };
 
@@ -112,7 +113,7 @@ class Registration extends Component {
 
         this.setState({
             loading: true
-        })
+        });
 
         console.log(this.state.registrationForm.username.value);
         console.log(this.state.registrationForm.email.value);
@@ -128,36 +129,19 @@ class Registration extends Component {
         };
         console.log(registerData);
 
-        axios({
-            method: 'post',
-            url: "http://fdfb6477.ngrok.io/users/register",
-            data: registerData
-        })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (response) {
-                console.log(response);
-            })
-
-        // axios.post("http://fdfb6477.ngrok.io/users/register", registerData)
-        //     .then(response => console.log(response))
-        //     .then(response => {
-        //         this.setState({
-        //             loading: false
-        //         });
-        //
+        // axios({
+        //     method: 'post',
+        //     url: "http://84564816.ngrok.io/users/register",
+        //     data: registerData
+        // })
+        //     .then(function (response) {
+        //         console.log(response);
         //     })
-        //     .catch(err => {
-        //         this.setState({
-        //             loading: false
-        //         })
-        //     })
+        //     .catch(function (response) {
+        //         console.log(response);
+        //     });
 
-        // this.props.onRegister(
-        //     this.state.registrationForm.username.value,
-        //     this.state.registrationForm.email.value,
-        //     this.state.registrationForm.password.value)
+        this.props.onRegister(registerData);
     };
 
     render() {
@@ -198,12 +182,10 @@ class Registration extends Component {
 //
 // }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         onRegister: (username, email, password) => dispatch(actions.auth(username, email, password))
-//     };
-// };
-//
-// export default connect(null, mapDispatchToProps)(Registration);
+const mapDispatchToProps = dispatch => {
+    return {
+        onRegister: (registerData) => dispatch(actions.register(registerData))
+    };
+};
 
-export default Registration;
+export default connect(null, mapDispatchToProps)(Registration);
