@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import Layout from './hoc/Layout/Layout'
 import {Route, Switch} from 'react-router-dom';
 import Register from './containers/Auth/Registration/Registration';
@@ -8,9 +8,37 @@ import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile'
 
-class App extends Component {
+const App = props => {
 
-  render() {
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    // const userStatusHandler = () => {
+    //     const token = localStorage.getItem('token');
+    //     if (token !== null) {
+    //         setIsAuthenticated(true);
+    //     }
+    // };
+    //
+    // let routes = (
+    //     <Switch>
+    //         <Route path="/login" component={Login}/>
+    //         <Route path="/register" component={Register}/>
+    //         <Route path="/" exact component={LostWorld}/>
+    //     </Switch>
+    // );
+    
+    // if (isAuthenticated) {
+    //     routes = (
+    //         <Switch>
+    //             <Route path="/login" component={Login}/>
+    //             <Route exact path="/logout" component={Logout}/>
+    //             <Route path="/register" component={Register}/>
+    //             <Route path="/myProfile" component={Profile}/>
+    //             <Route path="/" exact component={LostWorld}/>
+    //         </Switch>
+    //     )
+    // }
+
     return (
         <Layout>
             <Switch>
@@ -20,9 +48,9 @@ class App extends Component {
                 <Route path="/myProfile" component={Profile}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
+            {/*{routes}*/}
         </Layout>
     );
-  }
-}
+  };
 
 export default App;
