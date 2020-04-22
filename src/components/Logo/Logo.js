@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from '../../assets/images/LostWorldLogo.gif';
+import logoImage from '../../assets/images/Earth.gif';
 import classes from './Logo.module.css';
 
 const logo = (props) => (
