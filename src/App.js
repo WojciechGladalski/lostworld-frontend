@@ -10,37 +10,25 @@ import Profile from './components/Profile/Profile'
 
 const App = props => {
 
-    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    // const userStatusHandler = () => {
-    //     const token = localStorage.getItem('token');
-    //     if (token !== null) {
-    //         setIsAuthenticated(true);
-    //     }
-    // };
-    //
-    // let routes = (
-    //     <Switch>
-    //         <Route path="/login" component={Login}/>
-    //         <Route path="/register" component={Register}/>
-    //         <Route path="/" exact component={LostWorld}/>
-    //     </Switch>
-    // );
+    const userStatusHandler = () => {
+        const token = localStorage.getItem('token');
+        if (token !== null) {
+            setIsAuthenticated(true);
+        }
+    };
+
+    let routes = (
+        <Switch>
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
+            <Route path="/" exact component={LostWorld}/>
+        </Switch>
+    );
     
-    // if (isAuthenticated) {
-    //     routes = (
-    //         <Switch>
-    //             <Route path="/login" component={Login}/>
-    //             <Route exact path="/logout" component={Logout}/>
-    //             <Route path="/register" component={Register}/>
-    //             <Route path="/myProfile" component={Profile}/>
-    //             <Route path="/" exact component={LostWorld}/>
-    //         </Switch>
-    //     )
-    // }
-
-    return (
-        <Layout>
+    if (isAuthenticated) {
+        routes = (
             <Switch>
                 <Route path="/login" component={Login}/>
                 <Route exact path="/logout" component={Logout}/>
@@ -48,7 +36,19 @@ const App = props => {
                 <Route path="/myProfile" component={Profile}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
-            {/*{routes}*/}
+        )
+    }
+
+    return (
+        <Layout>
+            {/*<Switch>*/}
+            {/*    <Route path="/login" component={Login}/>*/}
+            {/*    <Route exact path="/logout" component={Logout}/>*/}
+            {/*    <Route path="/register" component={Register}/>*/}
+            {/*    <Route path="/myProfile" component={Profile}/>*/}
+            {/*    <Route path="/" exact component={LostWorld}/>*/}
+            {/*</Switch>*/}
+            {routes}
         </Layout>
     );
   };
