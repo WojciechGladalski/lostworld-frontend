@@ -1,13 +1,14 @@
 import React from 'react';
 import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
+import Aux from '../../../hoc/AuxComponent/AuxComponent';
 import axios from "axios";
 
 function amisawyer() {
     axios({
         method: 'get',
         url: 'http://fdfb6477.ngrok.io/users/sec',
-        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token') }
+        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
     })
         .then(function (response) {
             //handle success
@@ -21,7 +22,7 @@ function amisawyer() {
     axios({
         method: 'get',
         url: 'http://fdfb6477.ngrok.io/users/check',
-        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token') }
+        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
     })
         .then(function (response) {
             //handle success
@@ -35,10 +36,15 @@ function amisawyer() {
 
 const navigationItems = (props) => (
     <ul className={classes.NavigationItems}>
-        <NavigationItem link="/myProfile">PROFIL</NavigationItem>
-        <NavigationItem link="/login">ZALOGUJ</NavigationItem>
-        <NavigationItem link="/register">ZAREJESTRUJ</NavigationItem>
-        <NavigationItem link="/logout">WYLOGUJ</NavigationItem>
+        {props.isAuth ? <NavigationItem link="/myProfile">PROFIL</NavigationItem> : null}
+        {!props.isAuth
+            ? <Aux>
+                <NavigationItem link="/login">ZALOGUJ</NavigationItem>
+                <NavigationItem link="/register">ZAREJESTRUJ</NavigationItem>
+              </Aux>
+            : <NavigationItem link="/logout">WYLOGUJ</NavigationItem>}
+
+
         {/*<button onClick={amisawyer}>AM I SAWYER?!</button>*/}
     </ul>
 );
