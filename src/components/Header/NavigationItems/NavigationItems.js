@@ -44,7 +44,6 @@ const navigationItems = (props) => (
               </Aux>
             : <NavigationItem link="/logout">WYLOGUJ</NavigationItem>}
 
-
         {/*<button onClick={amisawyer}>AM I SAWYER?!</button>*/}
     </ul>
 );
