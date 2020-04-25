@@ -4,7 +4,7 @@ import {updateObject} from '../../shared/utility';
 const initialState = {
     error: null,
     loading: false,
-    token: null
+    token: localStorage.getItem('token')
 };
 
 const authStart = (state, action) => {

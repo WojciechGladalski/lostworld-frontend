@@ -50,7 +50,8 @@ export const login = (username, password) => {
 
                 localStorage.setItem('token', response.data.accessToken);
 
-                dispatch(authSuccess(response.data.accessToken))
+                dispatch(authSuccess(response.data.accessToken));
+                window.location.href = '/';
             })
             .catch(function (response) {
                 //handle error
