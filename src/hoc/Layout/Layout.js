@@ -1,22 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {connect} from "react-redux";
 import classes from './Layout.module.css';
 import Aux from '../AuxComponent/AuxComponent';
 import Toolbar from '../../components/Header/Toolbar/Toolbar'
 import Footer from '../../components/Footer/Footer';
 
-class Layout extends Component {
-    render() {
-        return (
-            <Aux>
-                <Toolbar
-                    isAuth={this.props.isAuthenticated}/>
-                <main className={classes.Content}>
-                    {this.props.children}
-                </main>
-                <Footer/>
-            </Aux>
-        );
-    }
-}
+const Layout = props => {
+    return (
+        <Aux>
+            <Toolbar
+                isAuth={props.isAuthenticated}/>
+            <main className={classes.Content}>
+                {props.children}
+            </main>
+            <Footer/>
+        </Aux>
+    );
+};
 
-export default Layout;
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !== null
+    };
+};
+
+export default connect(mapStateToProps)(Layout);

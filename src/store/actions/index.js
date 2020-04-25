@@ -1,5 +1,6 @@
 export {
     login,
     register,
-    logout
+    logout,
+    authCheckState
 } from './auth';
