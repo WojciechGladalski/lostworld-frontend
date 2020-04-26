@@ -6,18 +6,22 @@ import Submenu from '../NavigationItems/Submenu/Submenu'
 
 const toolbar = (props) => (
 
-    <div>
-        <header className={classes.Toolbar}>
+    <header className={classes.Toolbar}>
+        <div className={classes.Logo}>
             <Logo/>
-            <nav className={classes.DesktopOnly}>
+        </div>
+        <nav className={classes.Header}>
+            <div className={classes.Title}>
+                <h1>LOST WORLD</h1>
+            </div>
+            <nav className={classes.NavItems}>
                 <NavigationItems isAuth={props.isAuth}/>
             </nav>
+            <Submenu/>
+        </nav>
 
-        </header>
-        {/*<div>*/}
-        {/*    <Submenu/>*/}
-        {/*</div>*/}
-    </div>
+    </header>
+
 );
 
 export default toolbar;
