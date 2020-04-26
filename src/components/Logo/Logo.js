@@ -3,12 +3,10 @@ import logoImage from '../../assets/images/Earth.gif';
 import classes from './Logo.module.css';
 
 const logo = (props) => (
-        <div className={classes.Logo}>
-            <a href="/" style={{textDecoration: 'none', color: 'black'}}>
-                <img src={logoImage} alt='Logo'/>
-                <h1>LOST WORLD</h1>
-            </a>
-        </div>
-    );
+    <a href="/" className={classes.Logo}>
+        <img className={classes.Image} src={logoImage} alt='Logo'/>
+    </a>
+
+);
 
 export default logo;

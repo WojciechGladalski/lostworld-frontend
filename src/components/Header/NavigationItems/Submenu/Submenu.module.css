@@ -1,14 +1,13 @@
 .Submenu {
     width: 856px;
-    /*height: 30px;*/
+    height: 30px;
     margin: auto;
 }
 
 .Submenu ul {
     list-style: none;
     position: fixed;
-    z-index: 100;
-    left: 142px;
+    left: 132px;
 }
 
 .Submenu ul li {
