@@ -1,7 +1,10 @@
 import React from 'react';
+import AddPhotoForm from '../Forms/AddPhotoForm';
 import classes from './Profile.module.css'
 import Aux from '../../hoc/AuxComponent/AuxComponent';
 import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
+
+
 
 const profile = props => (
     <Aux>
@@ -33,7 +36,8 @@ const profile = props => (
                 <div></div>
             </div>
             <div className={classes.Albums}>
-                <h3>MOJE ALBUMY</h3><a href="/test">(dodaj)</a>
+                {/*<h3>MOJE ALBUMY</h3><a href="/test">(dodaj)</a>*/}
+                <AddPhotoForm/>
                 <div></div>
             </div>
             <div className={classes.Articles}>
