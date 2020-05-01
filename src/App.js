@@ -8,6 +8,7 @@ import LostWorld from './containers/LostWorld/LostWorld';
 import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile';
+import Form from './components/Test/test';
 import * as actions from './store/actions/index';
 
 const App = props => {
@@ -21,6 +22,8 @@ const App = props => {
         <Switch>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
+            <Route path="/myProfile" component={Profile}/>
+            <Route path="/test" component={Form}/>
             <Route path="/" exact component={LostWorld}/>
         </Switch>
     );
@@ -32,6 +35,7 @@ const App = props => {
                 <Route exact path="/logout" component={Logout}/>
                 <Route path="/register" component={Register}/>
                 <Route path="/myProfile" component={Profile}/>
+                <Route path="/test" component={Form}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
         )
