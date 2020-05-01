@@ -1,83 +1,71 @@
 import React from 'react';
 import {API_URL} from '../../shared/constants';
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
-function getAnswer() {
-    axios({
+const inputObject = React.createRef()
+
+function getTemplate() {
+    return axios({
         method: 'get',
         url: 'http://2c36ee71.ngrok.io/photos/upload',
-    })
-        .then(function (response) {
-            //handle success
-            console.log(response);
         })
-        .catch(function (response) {
-            //handle error
-            console.log(response);
+        .then(response =>{
+            return response.data
+        })
+        .catch(response => {
+            console.log(response)
+            return null
         });
 }
 
+function fileHandler(event) {
+    event.preventDefault();
 
-var singleUploadForm = document.querySelector('#singleUploadForm');
-var singleFileUploadInput = document.querySelector('#singleFileUploadInput');
-var singleFileUploadError = document.querySelector('#singleFileUploadError');
-var singleFileUploadSuccess = document.querySelector('#singleFileUploadSuccess');
+    // console.log(inputObject)
+    // console.log(inputObject.current.files[0])
 
-function uploadSingleFile(file) {
-    const photoObject = getAnswer().response.data;
+    const fileBytes = []
 
-    console.log(photoObject);
-    console.log(file);
+    const reader = new FileReader()
+    reader.onload = function () {
+        let arrayBuffer = reader.result
+        let bytes = new Uint8Array(arrayBuffer);
+        bytes.forEach(item => fileBytes.push(item))
+        //console.log(bytes);
+    }
+    reader.readAsArrayBuffer(inputObject.current.files[0])
 
-    var formData = new FormData();
-    formData.append("file", file);
+    getTemplate().then(responseObject => {
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", API_URL + "/photos/upload");
+        responseObject.data = fileBytes
+        responseObject.fileName = inputObject.current.files[0].name
+        responseObject.fileType = inputObject.current.files[0].type
+        responseObject.size = inputObject.current.files[0].size
 
-    xhr.onload = function () {
-        console.log(xhr.responseText);
-        var response = JSON.parse(xhr.responseText);
-        if (xhr.status == 200) {
-            singleFileUploadError.style.display = "none";
-            singleFileUploadSuccess.innerHTML = "<p>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
-            singleFileUploadSuccess.style.display = "block";
-        } else {
-            singleFileUploadSuccess.style.display = "none";
-            singleFileUploadError.innerHTML = (response && response.message) || "Some Error Occurred";
-        }
-    };
-    xhr.send(formData);
-}
-
-if (singleUploadForm) {
-    singleUploadForm.addEventListener('submit', function (event) {
-        var files = singleFileUploadInput.files;
-        // if (files.length === 0) {
-        //     singleFileUploadError.innerHTML = "Please select a file";
-        //     singleFileUploadError.style.display = "block";
-        // }
-        uploadSingleFile(files[0]);
-        event.preventDefault();
-    }, true);
-}
+        axios({
+            method: 'post',
+            url:'http://2c36ee71.ngrok.io/photos/upload',
+            data: responseObject
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (response) {
+                console.log(response);
+            });
+    })
+};
 
 const test = props => (
     <div>
-        <button onClick={getAnswer}>response</button>
-
-            <div className="single-upload">
-                <h3>Upload Single File</h3>
-                <form id="singleUploadForm" name="singleUploadForm">
-                    <input id="singleFileUploadInput" type="file" name="file" className="file-input" required/>
-                    <button type="submit" className="primary submit-btn">Submit</button>
-                </form>
-                <div className="upload-response">
-                    <div id="singleFileUploadError"></div>
-                    <div id="singleFileUploadSuccess"></div>
-                </div>
-            </div>
-
+        <div className="single-upload">
+            <h3>Upload Single File</h3>
+            <form>
+                <input type="file" name="file" ref={inputObject}/>
+                <Button variant="success" onClick={fileHandler}>Submit</Button>
+            </form>
+        </div>
     </div>
 );
 
