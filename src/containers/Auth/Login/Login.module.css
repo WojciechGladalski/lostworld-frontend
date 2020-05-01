@@ -5,10 +5,9 @@
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     padding: 10px;
-    position: fixed;
     box-sizing: border-box;
     background-color: #eeeeee;
-    opacity: 0.88;
+    display: inline-block;
 }
 
 .Login form {
