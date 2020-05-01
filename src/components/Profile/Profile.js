@@ -33,7 +33,7 @@ const profile = props => (
                 <div></div>
             </div>
             <div className={classes.Albums}>
-                <h3>MOJE ALBUMY</h3><a href="/addAlbum">(dodaj)</a>
+                <h3>MOJE ALBUMY</h3><a href="/test">(dodaj)</a>
                 <div></div>
             </div>
             <div className={classes.Articles}>
