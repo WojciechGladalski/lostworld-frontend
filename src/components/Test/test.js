@@ -8,9 +8,10 @@ const inputObject = React.createRef()
 function getTemplate() {
     return axios({
         method: 'get',
-        url: 'http://2c36ee71.ngrok.io/photos/upload',
+        url: API_URL + '/photos/upload',
         })
         .then(response =>{
+            console.log(response)
             return response.data
         })
         .catch(response => {
@@ -25,14 +26,16 @@ function fileHandler(event) {
     // console.log(inputObject)
     // console.log(inputObject.current.files[0])
 
-    const fileBytes = []
+    let fileBytes = []
 
     const reader = new FileReader()
     reader.onload = function () {
         let arrayBuffer = reader.result
-        let bytes = new Uint8Array(arrayBuffer);
-        bytes.forEach(item => fileBytes.push(item))
-        //console.log(bytes);
+        let bytes = new Uint8Array(arrayBuffer)
+        //bytes.forEach(item => fileBytes.push(item))
+        fileBytes = Array.from(bytes)
+        console.log(bytes);
+        console.log(fileBytes)
     }
     reader.readAsArrayBuffer(inputObject.current.files[0])
 
@@ -45,14 +48,14 @@ function fileHandler(event) {
 
         axios({
             method: 'post',
-            url:'http://2c36ee71.ngrok.io/photos/upload',
+            url: API_URL + '/photos/upload',
             data: responseObject
         })
             .then(function (response) {
                 console.log(response);
             })
-            .catch(function (response) {
-                console.log(response);
+            .catch(function (error) {
+                console.log(error.response.data);
             });
     })
 };

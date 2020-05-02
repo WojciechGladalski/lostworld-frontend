@@ -41,7 +41,7 @@ export const login = (username, password) => {
 
         axios({
             method: 'post',
-            url: API_URL + 'users/login',
+            url: API_URL + '/users/login',
             data: loginData
         })
             .then(function (response) {
@@ -66,7 +66,7 @@ export const register = (registerData) => {
 
         axios({
             method: 'post',
-            url: API_URL + "users/register",
+            url: API_URL + "/users/register",
             data: registerData
         })
             .then(function (response) {
