@@ -1,31 +1,14 @@
 .Footer {
     width: 100%;
-    left: 0;
-    bottom: 0;
+    /*margin-top: 48px;*/
+    padding: 10px;
     background-color: green;
-    height: 40px;
-    position: fixed;
-    z-index: 10;
     border-top: 2px solid darkslategrey;
 }
 
-.CenterBar {
-    width: 80%;
-    align-items: center;
-    margin: auto;
-}
-
-.SocialMedia {
-    width: 80%;
-    position: absolute;
-    margin: auto;
-    float: left;
-    transform: translateY(15%);
-}
-
 .Copyright {
-    float: right;
-    position: relative;
+    display: inline-block;
+    vertical-align: middle;
     top: 0;
     transform: translateY(15%);
 }

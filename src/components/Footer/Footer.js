@@ -1,17 +1,12 @@
 import React from 'react';
 import classes from './Footer.module.css';
 import SocialMediaBar from './SocialMediaBar/SocialMediaBar';
-import Copyright from './CopyrightBar/CopyrightBar';
 
 const footer = (props) => (
     <footer className={classes.Footer}>
-        <div className={classes.CenterBar}>
-            <div className={classes.SocialMedia}>
-                <SocialMediaBar height='80%'/>
-            </div>
-            <div className={classes.Copyright}>
-                <Copyright/>
-            </div>
+        <SocialMediaBar height='80%'/>
+        <div className={classes.Copyright}>
+            <p><strong>Copyright © 2020 LostWorldTravels</strong></p>
         </div>
     </footer>
 );
