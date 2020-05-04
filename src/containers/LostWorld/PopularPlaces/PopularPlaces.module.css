@@ -1,0 +1,57 @@
+.PopularPlaces {
+    background-color: #d4ff8a;
+    margin-top: 80px;
+    padding: 16px;
+}
+
+.Title {
+    color: #cd9a24;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.PopularPlacesList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.PopularPlacesListItem {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+.PopularPlacesListItemImage {
+    /*background-color: #3bca91;*/
+    background-image: url("../../../assets/images/Parco_Naturale_Adamello_Brenta_07.jpg");
+    background-size: cover;
+    filter: brightness(60%);
+    border: 2px solid #424242;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.PopularPlacesListItemImage:hover {
+    filter: brightness(80%);
+}
+
+.PopularPlacesListItemDescription {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Image {
+    border-radius: 50%;
+    filter: brightness(80%);
+}
+
+.Image:hover {
+    cursor: pointer;
+    filter: brightness(100%);
+}
