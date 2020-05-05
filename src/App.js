@@ -9,7 +9,8 @@ import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile';
 import * as actions from './store/actions/index';
-import Test from "./components/Test/Test";
+import TestUpload from "./components/Test/TestUpload";
+import TestShow from "./components/Test/TestShow";
 
 const App = props => {
 
@@ -23,7 +24,8 @@ const App = props => {
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/myProfile" component={Profile}/>
-            <Route path="/test/:id" component={Test}/>
+            <Route path="/upload" component={TestUpload}/>
+            <Route path="/check/:id" component={TestShow}/>
             <Route path="/" exact component={LostWorld}/>
         </Switch>
     );
@@ -35,7 +37,8 @@ const App = props => {
                 <Route exact path="/logout" component={Logout}/>
                 <Route path="/register" component={Register}/>
                 <Route path="/myProfile" component={Profile}/>
-                <Route path="/test/:id" component={Test}/>
+                <Route path="/upload" component={TestUpload}/>
+                <Route path="/check/:id" component={TestShow}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
         )
