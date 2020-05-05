@@ -9,6 +9,7 @@
 
 .Toolbar {
     width: 100%;
+    position: fixed;
     height: 106px;
     background-color: green;
     padding: 0 20px 0 80px;
