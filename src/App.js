@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Layout from './hoc/Layout/Layout'
+import Layout from './components/UI/Layout/Layout'
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
 import Register from './containers/Auth/Registration/Registration';
