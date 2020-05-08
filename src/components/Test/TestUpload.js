@@ -21,6 +21,9 @@ function fileHandler(event) {
     })
         .then(function (response) {
             console.log(response);
+            if (response.status === 202) {
+                document.getElementById("answer").innerText = 'One ugly motherfucker... Anyway id is: ' + response.data.id
+            }
         })
         .catch(function (error) {
             console.log(error.response.data);
@@ -31,11 +34,12 @@ const TestUpload = props => {
     return (
         <div>
             <div className="single-upload">
-                <h3>Upload Single File</h3>
+                <h3>Upload Single Photo</h3>
                 <form>
                     <input type="file" name="file" ref={inputObject}/>
                     <Button variant="success" onClick={fileHandler}>Submit</Button>
                 </form>
+                <div id="answer"></div>
             </div>
         </div>
     )
