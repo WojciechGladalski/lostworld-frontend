@@ -5,9 +5,7 @@ import Button from "react-bootstrap/Button";
 
 let id = null
 
-function takePhoto(event) {
-
-    event.preventDefault();
+function takePhoto() {
 
     console.log(id)
 
@@ -39,12 +37,13 @@ const TestShow = props => {
 
     id = props.match.params.id
 
+    takePhoto()
+
     return (
         <div>
             <div className="single-upload">
-                <h3>Show Single File</h3>
-                <div><button onClick={takePhoto}>Generate!</button></div>
-                <div><img id="PhotoFromBackend" src="" style={{height: 500, width: 800}}/></div>
+                <h3>Show Single Photo</h3>
+                <div><img id="PhotoFromBackend" src="" style={{height: 500, width: 700}}/></div>
             </div>
         </div>
     )
