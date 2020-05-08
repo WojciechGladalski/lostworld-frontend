@@ -1,6 +1,9 @@
 .Content {
-    margin-top: 96px;
     height: 100%;
+    width: 100%;
+    padding-top: 106px;
     background: linear-gradient(#eeeeee, #cccccc);
     background-size: cover;
+    /*position: fixed;*/
+    /*z-index: -1;*/
 }

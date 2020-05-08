@@ -1,13 +1,23 @@
 .SocialMedia {
-    height: 100%;
-    background-color: mediumseagreen;
-    box-sizing: border-box;
-    margin-left: 80px;
-    width: 550px;
+    display: inline-block;
+    text-align: left;
+    margin-left: 100px;
+    width: calc(100%  - 422px);
+    vertical-align: middle;
 }
 
-.SocialMedia img {
-    float: left;
+.SocialMediaList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.SocialMediaListItem {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.SocialMediaListItem img {
     height: 30px;
     padding: 0 10px;
     border-radius: 30px;
