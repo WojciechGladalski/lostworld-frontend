@@ -22,7 +22,7 @@ const profile = props => (
                 </ul>
             </div>
             <div className={classes.TravelPlans}>
-                <h3>MOJE PLANY PODRÓŻY</h3><a href="addTravelPlan">(dodaj)</a>
+                <h3>MOJE PLANY PODRÓŻY</h3><a href="/addTravelPlan">(dodaj)</a>
                 <div>
                     <ul>
                         <li>Plan 1</li>
