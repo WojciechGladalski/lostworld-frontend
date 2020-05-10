@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import Input from '../../../components/UI/Input/Input';
 import * as actions from '../../../store/actions/index'
 import Button from "react-bootstrap/Button";
+import Spinner from "../../../components/UI/Spinner/Spinner";
 
 class Registration extends Component {
 
@@ -45,7 +46,7 @@ class Registration extends Component {
                 value: '',
                 validation: {
                     required: true,
-                    minLength: 8
+                    minLength: 6
                 },
                 valid: false,
                 touched: false
@@ -92,8 +93,22 @@ class Registration extends Component {
             isValid = value.length >= rules.minLength && isValid;
         }
 
+        if (rules.isPasswordEqual) {
+            isValid = value === this.state.registrationForm.password.value && isValid;
+        }
+
         return isValid;
     };
+
+    // isEmailCorrect = (value, rules) => {
+    //     let isValid = true;
+    //
+    //     if (rules.isEmail) {
+    //         const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    //         isValid = pattern.test(value) && isValid;
+    //     }
+    //     return isValid;
+    // }
 
     inputChangedHandler = (event, inputName) => {
         const updatedForm = {
@@ -103,7 +118,7 @@ class Registration extends Component {
                 value: event.target.value,
                 valid: this.checkValidity(event.target.value, this.state.registrationForm[inputName].validation),
                 touched: true
-            }
+            },
         };
         this.setState({registrationForm: updatedForm});
     };
@@ -129,17 +144,12 @@ class Registration extends Component {
         };
         console.log(registerData);
 
-        // axios({
-        //     method: 'post',
-        //     url: "http://84564816.ngrok.io/users/register",
-        //     data: registerData
-        // })
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (response) {
-        //         console.log(response);
-        //     });
+        // const password = this.state.registrationForm.password.value;
+        // const confirmPassword = this.state.registrationForm.confirmPassword.value;
+        //
+        // if (password !== confirmPassword) {
+        //
+        // }
 
         this.props.onRegister(registerData);
     };
@@ -166,8 +176,20 @@ class Registration extends Component {
             )
         );
 
+        if (this.props.loading) {
+            form = <Spinner/>
+        }
+
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <p>{this.props.error.message}</p>
+            )
+        }
+
         return (
             <div className={classes.Registration}>
+                {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
                     {/*<button onClick={this.submitHandler}>Zarejestruj</button>*/}
@@ -178,9 +200,12 @@ class Registration extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//
-// }
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -188,4 +213,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Registration);
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);
