@@ -56,6 +56,7 @@ export const login = (username, password) => {
             .catch(function (response) {
                 //handle error
                 console.log(response);
+                dispatch(authFail(response.data.error));
             });
     };
 };
@@ -74,6 +75,7 @@ export const register = (registerData) => {
             })
             .catch(function (response) {
                 console.log(response);
+                dispatch(authFail(response.data.error));
             })
     }
 };
