@@ -3,6 +3,7 @@ import classes from './Login.module.css';
 import {connect} from "react-redux";
 import Input from "../../../components/UI/Input/Input";
 import Button from 'react-bootstrap/Button';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import * as actions from '../../../store/actions/index'
 
 class Login extends Component {
@@ -113,8 +114,20 @@ class Login extends Component {
             )
         );
 
+        if (this.props.loading) {
+            form = <Spinner/>
+        }
+
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <p>{this.props.error.message}</p>
+            )
+        }
+
         return (
             <div className={classes.Login}>
+                {errorMessage}
                 <form onSubmit={this.loginHandler}>
                     {form}
                     {/*<button onClick={this.loginHandler}>Zaloguj</button>*/}
@@ -126,10 +139,17 @@ class Login extends Component {
 
 }
 
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         onLogin: (username, password) => dispatch(actions.login(username, password))
     }
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
