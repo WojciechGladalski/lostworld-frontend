@@ -8,7 +8,7 @@ const socialMediaBar = (props) => (
         <ul className={classes.SocialMediaList}>
             <li className={classes.SocialMediaListItem}>
                 <a href="http://facebook.com">
-                    <img src={facebookIcon} alt='Facebook' style={{borderRadius: '50%'}}/>
+                    <img src={facebookIcon} alt='Facebook'/>
                 </a>
             </li>
             <li className={classes.SocialMediaListItem}>
