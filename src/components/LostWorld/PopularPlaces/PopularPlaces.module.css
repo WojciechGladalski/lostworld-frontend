@@ -25,7 +25,7 @@
 
 .PopularPlacesListItemImage {
     /*background-color: #3bca91;*/
-    background-image: url("../../../assets/images/Parco_Naturale_Adamello_Brenta_07.jpg");
+    /*background-image: url("./src/assets/images/Parco_Naturale_Adamello_Brenta_07.jpg");*/
     background-size: cover;
     filter: brightness(60%);
     border: 2px solid #424242;
