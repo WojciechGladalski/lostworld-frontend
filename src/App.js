@@ -1,16 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, Suspense} from 'react';
 import Layout from './components/UI/Layout/Layout'
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
 import Register from './containers/Auth/Registration/Registration';
 import Login from './containers/Auth/Login/Login';
-import LostWorld from './containers/LostWorld/LostWorld';
+import LostWorld from './components/LostWorld/LostWorld';
 import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile';
+import Countries from './components/Countries/Countries'
+import TestShow from './components/Test/TestShow';
+import TestUpload from './components/Test/TestUpload';
+import Spinner from './components/UI/Spinner/Spinner'
 import * as actions from './store/actions/index';
-import TestUpload from "./components/Test/TestUpload";
-import TestShow from "./components/Test/TestShow";
 
 const App = props => {
 
@@ -24,8 +26,9 @@ const App = props => {
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/myProfile" component={Profile}/>
-            <Route path="/upload" component={TestUpload}/>
-            <Route path="/check/:id" component={TestShow}/>
+            <Route path="/countries" component={Countries}/>
+            <Route path="/test" component={TestShow}/>
+            <Route path="/testUpload" component={TestUpload}/>
             <Route path="/" exact component={LostWorld}/>
         </Switch>
     );
@@ -33,12 +36,13 @@ const App = props => {
     if (props.isAuthenticated) {
         routes = (
             <Switch>
-                <Route path="/login" component={Login}/>
+                {/*<Route path="/login" component={Login}/>*/}
                 <Route exact path="/logout" component={Logout}/>
-                <Route path="/register" component={Register}/>
+                {/*<Route path="/register" component={Register}/>*/}
                 <Route path="/myProfile" component={Profile}/>
-                <Route path="/upload" component={TestUpload}/>
-                <Route path="/check/:id" component={TestShow}/>
+                <Route path="/countries" component={Countries}/>
+                <Route path="/test" component={TestShow}/>
+                <Route path="/testUpload" component={TestUpload}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
         )
@@ -47,6 +51,9 @@ const App = props => {
     return (
         <div>
             <Layout>
+                {/*<Suspense fallback={<Spinner/>}>*/}
+                {/*    {routes}*/}
+                {/*</Suspense>*/}
                 {routes}
             </Layout>
         </div>
