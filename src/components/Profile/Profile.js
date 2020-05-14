@@ -3,24 +3,14 @@ import AddPhotoForm from '../Forms/AddPhotoForm';
 import classes from './Profile.module.css'
 import Aux from '../../hoc/AuxComponent/AuxComponent';
 import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
-
+import ProfileMenu from "./ProfileMenu/ProfileMenu";
 
 
 const profile = props => (
     <Aux>
         <ProfileSidebar/>
         <div className={classes.ProfileContent}>
-            <div style={{margin: '-10px 0 0 -40px'}}>
-                <ul className={classes.ProfileMenu}>
-                    <li>Mapa</li>
-                    <li>Plany podróży</li>
-                    <li>Miejsca</li>
-                    <li>Zdjęcia</li>
-                    <li>Artykuły</li>
-                    <li>Znajomi</li>
-                    <li>Panel administratora</li>
-                </ul>
-            </div>
+            <ProfileMenu/>
             <div className={classes.TravelPlans}>
                 <h3>MOJE PLANY PODRÓŻY</h3><a href="/addTravelPlan">(dodaj)</a>
                 <div>
