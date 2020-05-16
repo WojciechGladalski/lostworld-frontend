@@ -1,0 +1,12 @@
+.TravelPlans div {
+    border: 2px solid #bbbbbb;
+    background-color: #eeeeee;
+}
+
+.TravelPlans div ul {
+    padding-top: 10px;
+}
+
+.TravelPlans div ul li {
+    padding: 5px 0;
+}

@@ -4,23 +4,14 @@ import classes from './Profile.module.css'
 import Aux from '../../hoc/AuxComponent/AuxComponent';
 import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
-
+import TravelPlans from "../TravelPlans/TravelPlans";
 
 const profile = props => (
     <Aux>
         <ProfileSidebar/>
         <div className={classes.ProfileContent}>
             <ProfileMenu/>
-            <div className={classes.TravelPlans}>
-                <h3>MOJE PLANY PODRÓŻY</h3><a href="/addTravelPlan">(dodaj)</a>
-                <div>
-                    <ul>
-                        <li>Plan 1</li>
-                        <li>Plan 2</li>
-                        <li>Plan 3</li>
-                    </ul>
-                </div>
-            </div>
+            <TravelPlans/>
             <div className={classes.Map}>
                 <h3>ODWIEDZONE KRAJE (MAPA)</h3>
                 <div></div>
