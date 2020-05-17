@@ -5,6 +5,7 @@ import Aux from '../../hoc/AuxComponent/AuxComponent';
 import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import TravelPlans from "../TravelPlans/TravelPlans";
+import ArticlesProfile from "../Articles/ArticlesProfile";
 
 const profile = props => (
     <Aux>
@@ -21,10 +22,7 @@ const profile = props => (
                 <AddPhotoForm/>
                 <div></div>
             </div>
-            <div className={classes.Articles}>
-                <h3>MOJE ARTYKUŁY</h3><a href="addArticle">(dodaj)</a>
-                <div></div>
-            </div>
+            <ArticlesProfile/>
             <div className={classes.Following}>
                 <h3>OBSERWOWANI UŻYTKOWNICY</h3>
                 <div></div>
