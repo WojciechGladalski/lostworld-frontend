@@ -8,7 +8,8 @@ import LostWorld from './components/LostWorld/LostWorld';
 import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile';
-import Countries from './components/Countries/Countries'
+import Countries from './components/Countries/Countries';
+import SingleRelic from "./components/Relics/SingleRelic";
 import TestShow from './components/Test/TestShow';
 import TestUpload from './components/Test/TestUpload';
 import Spinner from './components/UI/Spinner/Spinner'
@@ -27,6 +28,7 @@ const App = props => {
             <Route path="/register" component={Register}/>
             <Route path="/myProfile" component={Profile}/>
             <Route path="/countries" component={Countries}/>
+            <Route path="/relics/{relic}" component={SingleRelic}/>
             <Route path="/test" component={TestShow}/>
             <Route path="/testUpload" component={TestUpload}/>
             <Route path="/" exact component={LostWorld}/>
@@ -41,6 +43,7 @@ const App = props => {
                 {/*<Route path="/register" component={Register}/>*/}
                 <Route path="/myProfile" component={Profile}/>
                 <Route path="/countries" component={Countries}/>
+                <Route path="/relics/{relic}" component={SingleRelic}/>
                 <Route path="/test" component={TestShow}/>
                 <Route path="/testUpload" component={TestUpload}/>
                 <Route path="/" exact component={LostWorld}/>
