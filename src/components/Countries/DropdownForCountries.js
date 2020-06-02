@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import Dropdown from 'react-bootstrap/Dropdown'
 import FormControl from 'react-bootstrap/FormControl'
+import * as actions from '../../store/actions/index';
 // import DropdownButton from 'react-bootstrap/DropdownButton'
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -48,7 +50,7 @@ const CustomMenu = React.forwardRef(
     },
 );
 
-const DropdownForCountries = () => {
+const DropdownForCountries = (props) => {
     return (
         <Dropdown>
             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
@@ -65,4 +67,16 @@ const DropdownForCountries = () => {
     );
 }
 
-export default DropdownForCountries;
+const mapStateToProps = state => {
+    return {
+        countries: state.countries.countries
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onFetchCountries: (countries) => dispatch(actions.fetchCountries(countries))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DropdownForCountries);
