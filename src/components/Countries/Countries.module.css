@@ -1,15 +1,28 @@
-.MainChooseContainer {
+.Countries {
+    width: 55%;
+    padding: 20px;
+    background: #eeeeee;
+    margin: 40px auto;
+    text-align: center;
+    color: #2E7D32;
+    border: 1px solid grey;
+}
 
+.MainChooseContainer {
 }
 
 .ChooseContinent {
-
+    padding: 15px;
 }
 
 .ChooseCounty {
-
+    padding: 15px;
 }
 
 .MainMap {
-
+    width: 75%;
+    height: 183px;
+    text-align: center;
+    margin: 50px auto 0;
+    border: 1px solid grey;
 }

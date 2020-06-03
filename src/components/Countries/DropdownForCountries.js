@@ -54,7 +54,7 @@ const DropdownForCountries = (props) => {
     return (
         <Dropdown>
             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                Wybierz kraj z listy
+                Wybierz
             </Dropdown.Toggle>
 
             <Dropdown.Menu as={CustomMenu}>
