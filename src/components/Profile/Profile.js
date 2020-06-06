@@ -6,6 +6,7 @@ import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import TravelPlans from "../TravelPlans/TravelPlans";
 import ArticlesProfile from "../Articles/ArticlesProfile";
+import ProfilefollowingUsers from "./Following/ProfileFollowingUsers";
 
 const profile = props => (
     <Aux>
@@ -23,10 +24,7 @@ const profile = props => (
                 <div></div>
             </div>
             <ArticlesProfile/>
-            <div className={classes.Following}>
-                <h3>OBSERWOWANI UŻYTKOWNICY</h3>
-                <div></div>
-            </div>
+            <ProfilefollowingUsers/>
         </div>
         {/*<div style={{clear: 'both'}}></div>*/}
 
