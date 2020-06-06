@@ -1,4 +1,5 @@
 import React from 'react';
+import {API_URL} from '../../shared/constants'
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -9,7 +10,7 @@ const inputObject = React.createRef();
 const getTemplate = () => {
     return axios({
         method: 'get',
-        url: 'http://2c36ee71.ngrok.io/photos/upload',
+        url: `${API_URL}/photos/upload`,
     })
         .then(response =>{
             return response.data
@@ -46,7 +47,7 @@ const fileHandler = (event) => {
 
         axios({
             method: 'post',
-            url:"http://2c36ee71.ngrok.io/photos/upload",
+            url:`${API_URL}/photos/upload`,
             data: responseObject
         })
             .then(function (response) {
