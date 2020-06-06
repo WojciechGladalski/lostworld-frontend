@@ -1,9 +1,9 @@
 import React from 'react';
-import {API_URL} from '../../shared/constants'
+import Aux from "../../hoc/AuxComponent/AuxComponent";
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Aux from "../../hoc/AuxComponent/AuxComponent";
+import {API_URL} from "../../shared/constants";
 
 const inputObject = React.createRef();
 
@@ -47,7 +47,7 @@ const fileHandler = (event) => {
 
         axios({
             method: 'post',
-            url:`${API_URL}/photos/upload`,
+            url: `${API_URL}/photos/upload`,
             data: responseObject
         })
             .then(function (response) {
@@ -69,7 +69,7 @@ const MyVerticallyCenteredModal = (props) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Załaduj zdjęcie
+                    Dodaj zdjęcia
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -89,7 +89,7 @@ const MyVerticallyCenteredModal = (props) => {
     );
 };
 
-const AddAvatarForm = (props) => {
+const AddTravelPlanForm = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
@@ -105,4 +105,4 @@ const AddAvatarForm = (props) => {
     );
 };
 
-export default AddAvatarForm;
+export default AddTravelPlanForm;

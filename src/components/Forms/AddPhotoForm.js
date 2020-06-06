@@ -1,53 +1,54 @@
 import React from 'react';
+import {API_URL} from '../../shared/constants'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Aux from '../../hoc/AuxComponent/AuxComponent'
+// import {MyVerticallyCenteredModal} from '../../shared/forms';
 import axios from "axios";
 
-const inputObject = React.createRef()
+const inputObject = React.createRef();
 
-function getTemplate() {
+const getTemplate = () => {
     return axios({
         method: 'get',
-        url: 'http://2c36ee71.ngrok.io/photos/upload',
+        url: API_URL + 'photos/upload',
     })
         .then(response =>{
             return response.data
         })
         .catch(response => {
-            console.log(response)
+            console.log(response);
             return null
         });
-}
+};
 
-function fileHandler(event) {
+const fileHandler = (event) => {
     event.preventDefault();
 
-    console.log(inputObject)
-    console.log(inputObject.current.files[0])
+    console.log(inputObject);
+    console.log(inputObject.current.files[0]);
 
-    const fileBytes = []
+    const fileBytes = [];
 
-    const reader = new FileReader()
+    const reader = new FileReader();
     reader.onload = function () {
-        let arrayBuffer = reader.result
+        let arrayBuffer = reader.result;
         let bytes = new Uint8Array(arrayBuffer);
         bytes.forEach(item => fileBytes.push(item))
-        //console.log(bytes);
-    }
+    };
 
-    reader.readAsArrayBuffer(inputObject.current.files[0])
+    reader.readAsArrayBuffer(inputObject.current.files[0]);
 
     getTemplate().then(responseObject => {
 
-        responseObject.data = fileBytes
-        responseObject.fileName = inputObject.current.files[0].name
-        responseObject.fileType = inputObject.current.files[0].type
-        responseObject.size = inputObject.current.files[0].size
+        responseObject.data = fileBytes;
+        responseObject.fileName = inputObject.current.files[0].name;
+        responseObject.fileType = inputObject.current.files[0].type;
+        responseObject.size = inputObject.current.files[0].size;
 
         axios({
             method: 'post',
-            url:"http://2c36ee71.ngrok.io/photos/upload",
+            url: `${API_URL}/photos/upload`,
             data: responseObject
         })
             .then(function (response) {
@@ -59,7 +60,7 @@ function fileHandler(event) {
     })
 };
 
-function MyVerticallyCenteredModal(props) {
+const MyVerticallyCenteredModal = (props) => {
     return (
         <Modal
             {...props}
@@ -69,15 +70,14 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Dodaj zdjęcie
+                    Dodaj zdjęcia
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className="single-upload">
-                    <h3>Upload Single File</h3>
+                    {/*<h3>Upload Single File</h3>*/}
                     <form id="singleUploadForm" name="singleUploadForm">
                         <input ref={inputObject} id="singleFileUploadInput" type="file" name="file" className="file-input" required/>
-                        {/*<button type="submit" className="primary submit-btn">Submit</button>*/}
                         <Button type="submit" variant="success" onClick={fileHandler}>Dodaj</Button>
                     </form>
                     <div className="upload-response">
@@ -88,7 +88,7 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Body>
         </Modal>
     );
-}
+};
 
 const AddPhotoForm = (props) => {
     const [modalShow, setModalShow] = React.useState(false);

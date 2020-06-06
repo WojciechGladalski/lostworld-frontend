@@ -31,7 +31,7 @@ const App = props => {
             <Route path="/countries" component={Countries}/>
             <Route path="/relics/{relic}" component={SingleRelic}/>
             <Route path="/articles" component={Articles}/>
-            <Route path="/test" component={TestShow}/>
+            <Route path="/test/:id" component={TestShow}/>
             <Route path="/testUpload" component={TestUpload}/>
             <Route path="/" exact component={LostWorld}/>
         </Switch>
@@ -47,7 +47,7 @@ const App = props => {
                 <Route path="/countries" component={Countries}/>
                 <Route path="/relics/{relic}" component={SingleRelic}/>
                 <Route path="/articles" component={Articles}/>
-                <Route path="/test" component={TestShow}/>
+                <Route path="/test/:id" component={TestShow}/>
                 <Route path="/testUpload" component={TestUpload}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>
