@@ -8,3 +8,7 @@ export {
 export {
     fetchCountries
 } from './countries'
+
+export {
+    fetchFollowingUsers
+} from './followingUsers'

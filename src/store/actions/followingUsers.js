@@ -1,4 +1,6 @@
 import * as actionTypes from './actionTypes';
+import axios from "axios";
+import {API_URL} from "../../shared/constants";
 
 export const fetchFollowingUsersStart = () => {
     return {
@@ -21,5 +23,20 @@ export const fetchFollowingUsersFail = (error) => {
 }
 
 export const fetchFollowingUsers = () => {
+    return async dispatch => {
+        dispatch(fetchFollowingUsersStart());
 
+        await axios({
+            method: 'get',
+            url: `${API_URL}/users/getObservedUsers`,
+            headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+        }).then(function (response) {
+            //handle success
+            console.log(response);
+            return response;
+        })
+            .catch(err => {
+                dispatch(fetchFollowingUsersFail(err.response.data.error))
+            });
+    }
 }
