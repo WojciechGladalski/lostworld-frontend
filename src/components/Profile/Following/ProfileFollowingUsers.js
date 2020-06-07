@@ -1,43 +1,91 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {connect} from "react-redux";
 import classes from './ProfileFollowingUsers.module.css'
-import axios from 'axios';
-import {API_URL} from '../../../shared/constants';
+import * as actions from '../../../store/actions/index'
+import Spinner from '../../UI/Spinner/Spinner';
 
-const ProfilefollowingUsers = () => {
-    const [data, setData] = useState([]);
+const ProfilefollowingUsers = props => {
+    const {onFetchFollowingUsers} = props;
+
     useEffect(() => {
-        const fetchJson = async () => {
-            const response = await axios({
-                method: 'get',
-                url: `${API_URL}/users/getObservedUsers`,
-                headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
-            }).then(function (response) {
-                //handle success
-                console.log(response);
-                return response;
-            })
-                .catch(function (response) {
-                    //handle error
-                    console.log(response);
-                });
-            console.log(response.data)
-            setData(response.data)
-        };
-        fetchJson();
-    }, []);
+        onFetchFollowingUsers();
+    }, [onFetchFollowingUsers]);
+
+    let users = <Spinner/>
+
+    if (!props.loading) {
+        users = props.followingUsers.map(user => (
+            <li>
+                {user.username}
+            </li>
+        ))
+    }
+
     return (
         <div className={classes.Following}>
             <h3>OBSERWOWANI UŻYTKOWNICY</h3>
             <div>
                 <ul>
-                    {data.map(item => (
-                        <li>
-                            {item.username}
-                        </li>
-                    ))}
+                    {users}
                 </ul>
             </div>
         </div>
     )
 }
-export default ProfilefollowingUsers;
+
+const mapStateToProps = state => {
+    return {
+        followingUsers: state.followingUsers.followingUsers,
+        loading: state.followingUsers.loading
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onFetchFollowingUsers: () => dispatch(actions.fetchFollowingUsers())
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilefollowingUsers);
+
+
+
+// const ProfilefollowingUsers = () => {
+//     const [data, setData] = useState([]);
+//     useEffect(() => {
+//         const fetchJson = async () => {
+//             const response = await axios({
+//                 method: 'get',
+//                 url: `${API_URL}/users/getObservedUsers`,
+//                 headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+//             }).then(function (response) {
+//                 //handle success
+//                 console.log(response);
+//                 return response;
+//             })
+//                 .catch(function (response) {
+//                     //handle error
+//                     console.log(response);
+//                 });
+//             console.log(response.data)
+//             setData(response.data)
+//         };
+//         fetchJson();
+//     }, []);
+//     return (
+//         <div className={classes.Following}>
+//             <h3>OBSERWOWANI UŻYTKOWNICY</h3>
+//             <div>
+//                 <ul>
+//                     {data.map(item => (
+//                         <li>
+//                             {item.username}
+//                         </li>
+//                     ))}
+//                 </ul>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default ProfilefollowingUsers;
