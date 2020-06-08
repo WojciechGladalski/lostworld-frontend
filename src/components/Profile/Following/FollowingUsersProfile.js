@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
-import classes from './ProfileFollowingUsers.module.css'
+import classes from './FollowingUsersProfile.module.css'
 import * as actions from '../../../store/actions/index'
 import Spinner from '../../UI/Spinner/Spinner';
 
-const ProfilefollowingUsers = props => {
+const FollowingUsersProfile = props => {
     const {onFetchFollowingUsers} = props;
 
     useEffect(() => {
@@ -46,11 +46,11 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilefollowingUsers);
+export default connect(mapStateToProps, mapDispatchToProps)(FollowingUsersProfile);
 
 
 
-// const ProfilefollowingUsers = () => {
+// const FollowingUsersProfile = () => {
 //     const [data, setData] = useState([]);
 //     useEffect(() => {
 //         const fetchJson = async () => {
@@ -88,4 +88,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(ProfilefollowingUser
 //     )
 // }
 
-// export default ProfilefollowingUsers;
+// export default FollowingUsersProfile;

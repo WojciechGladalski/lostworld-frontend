@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from "./TravelPlans.module.css";
+import classes from "./TravelPlansProfile.module.css";
 
 const TravelPlans = () => (
     <div className={classes.TravelPlans}>
