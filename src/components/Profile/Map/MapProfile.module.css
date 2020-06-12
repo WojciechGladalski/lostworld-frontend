@@ -1,0 +1,10 @@
+.Map {
+    /*margin: 10px;*/
+}
+
+.Map div {
+    width: 450px;
+    height: 200px;
+    background-color: #eeeeee;
+    border: 2px solid #bbbbbb;
+}
