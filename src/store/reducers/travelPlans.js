@@ -20,7 +20,7 @@ const fetchTravelPlansFail = (state) => {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_TRAVEL_PLANS_START_START:
+        case actionTypes.FETCH_TRAVEL_PLANS_START:
             return fetchTravelPlansStart(state);
         case actionTypes.FETCH_TRAVEL_PLANS_SUCCESS:
             return fetchTravelPlansSuccess(state, action);
