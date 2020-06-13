@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import authReducer from './store/reducers/auth';
 import countriesReducer from './store/reducers/countries';
 import followingUsersReducer from './store/reducers/followingUsers'
+import travelPlansReducer from './store/reducers/travelPlans';
 
 const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
 
@@ -18,7 +19,8 @@ const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDU
 const rootReducer = combineReducers({
     auth: authReducer,
     countries: countriesReducer,
-    followingUsers: followingUsersReducer
+    followingUsers: followingUsersReducer,
+    travelPlans: travelPlansReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
