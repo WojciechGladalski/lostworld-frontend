@@ -14,7 +14,7 @@ const fetchCountriesSuccess = (state, action) => {
     return updateObject(state, {followingUsers: action.followingUsers})
 }
 
-const fetchCountriesFail = (state, action) => {
+const fetchCountriesFail = (state) => {
     return updateObject(state, {loading: false})
 }
 

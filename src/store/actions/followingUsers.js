@@ -34,6 +34,8 @@ export const fetchFollowingUsers = () => {
             //handle success
             console.log(response);
             return response;
+            //TODO sprawdzić, czy poniższe rozwiązanie zadziała
+            // dispatch(fetchFollowingUsersSuccess(response.data));
         })
             .catch(err => {
                 dispatch(fetchFollowingUsersFail(err.response.data.error))
