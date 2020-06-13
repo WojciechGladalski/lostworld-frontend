@@ -12,3 +12,7 @@ export {
 export {
     fetchFollowingUsers
 } from './followingUsers'
+
+export {
+    fetchTravelPlans
+} from './travelPlans'
