@@ -1,5 +1,8 @@
 import React from 'react';
+import {connect} from "react-redux";
 import classes from "./ArticlesProfile.module.css";
+import * as actions from '../../../store/actions/index'
+import Spinner from '../../UI/Spinner/Spinner';
 
 const ArticlesProfile = () => (
     <div className={classes.Articles}>

@@ -37,13 +37,13 @@ const mapStateToProps = state => {
     return {
         followingUsers: state.followingUsers.followingUsers,
         loading: state.followingUsers.loading
-    }
-}
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {
         onFetchFollowingUsers: () => dispatch(actions.fetchFollowingUsers())
-    }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FollowingUsersProfile);

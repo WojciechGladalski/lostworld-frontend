@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import classes from "./TravelPlansProfile.module.css";
-import * as actions from '../../../store/actions/index'
+import * as actions from '../../../store/actions';
 import Spinner from '../../UI/Spinner/Spinner';
 
 const TravelPlans = props => {
