@@ -16,3 +16,7 @@ export {
 export {
     fetchTravelPlans
 } from './travelPlans'
+
+export {
+    fetchArticles
+} from './articles'
