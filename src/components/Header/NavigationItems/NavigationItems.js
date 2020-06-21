@@ -7,7 +7,7 @@ import axios from "axios";
 function amisawyer() {
     axios({
         method: 'get',
-        url: 'http://fdfb6477.ngrok.io/users/sec',
+        url: 'http://fdfb6477.ngrok.io/users/getObservedUsers',
         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
     })
         .then(function (response) {
