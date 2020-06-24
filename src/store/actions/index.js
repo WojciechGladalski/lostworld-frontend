@@ -20,3 +20,7 @@ export {
 export {
     fetchArticles
 } from './articles'
+
+export {
+    fetchAlbums
+} from './albums'

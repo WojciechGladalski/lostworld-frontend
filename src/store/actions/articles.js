@@ -35,8 +35,7 @@ export const fetchArticles = () => {
             console.log(response);
             return response;
             // dispatch(fetchTravelPlansSuccess(response.data));
-        })
-            .catch(err => {
+        }).catch(err => {
                 dispatch(fetchArticlesFail(err.response.data.error))
             });
     }
