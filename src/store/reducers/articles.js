@@ -11,7 +11,7 @@ const fetchArticlesStart = (state) => {
 };
 
 const fetchArticlesSuccess = (state, action) => {
-    return updateObject(state, {articles: action.plans});
+    return updateObject(state, {articles: action.articles});
 };
 
 const fetchArticlesFail = (state) => {

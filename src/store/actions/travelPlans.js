@@ -8,10 +8,10 @@ export const fetchTravelPlansStart = () => {
     }
 }
 
-export const fetchTravelPlansSuccess = (users) => {
+export const fetchTravelPlansSuccess = (travelPlans) => {
     return {
         type: actionTypes.FETCH_TRAVEL_PLANS_SUCCESS,
-        followingUsers: users
+        plans: travelPlans
     }
 }
 

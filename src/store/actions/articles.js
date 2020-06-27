@@ -8,10 +8,10 @@ export const fetchArticlesStart = () => {
     }
 }
 
-export const fetchArticlesSuccess = (users) => {
+export const fetchArticlesSuccess = (articles) => {
     return {
         type: actionTypes.FETCH_ARTICLES_SUCCESS,
-        followingUsers: users
+        articles: articles
     }
 }
 
