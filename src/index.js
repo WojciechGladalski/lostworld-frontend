@@ -11,7 +11,8 @@ import authReducer from './store/reducers/auth';
 import countriesReducer from './store/reducers/countries';
 import followingUsersReducer from './store/reducers/followingUsers'
 import travelPlansReducer from './store/reducers/travelPlans';
-import articlesReducer from './store/reducers/articles'
+import articlesReducer from './store/reducers/articles';
+import albumsReducer from './store/reducers/albums';
 
 const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
 
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     countries: countriesReducer,
     followingUsers: followingUsersReducer,
     travelPlans: travelPlansReducer,
-    articles: articlesReducer
+    articles: articlesReducer,
+    albums: albumsReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
