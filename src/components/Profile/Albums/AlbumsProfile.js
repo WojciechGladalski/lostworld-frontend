@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux'
 import classes from './AlbumsProfile.module.css';
-import * as actions from '../../store/actions/index';
-import AddPhotoForm from "../Forms/AddPhotoForm";
-import Spinner from '../UI/Spinner/Spinner';
+import * as actions from '../../../store/actions';
+import AddPhotoForm from "../../Forms/AddPhotoForm";
+import Spinner from '../../UI/Spinner/Spinner';
 
 const AlbumsProfile = props => {
 

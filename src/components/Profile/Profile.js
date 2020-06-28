@@ -6,7 +6,7 @@ import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import TravelPlansProfile from "./TravelPlans/TravelPlansProfile";
 import ArticlesProfile from "./Articles/ArticlesProfile";
 import MapProfile from "./Map/MapProfile";
-import AlbumsProfile from "../Albums/AlbumsProfile";
+import AlbumsProfile from "./Albums/AlbumsProfile";
 import FollowingUsersProfile from "./Following/FollowingUsersProfile";
 
 const profile = props => (
