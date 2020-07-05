@@ -26,27 +26,28 @@ const input = (props) => {
     }
 
     let validationError = null;
-    let validationOfUsername = null;
-    let validationOfEmail = null;
-    let validationOfPassword = null;
+
+    // if (props.invalid && props.touched && !props.isUsernameCorrect) {
+    //     validationError = <p className={classes.ValidationError}>Wprowadź poprawną nazwę użytkownika</p>;
+    // }
+
+    // if (props.invalid && props.touched && !props.isEmailCorrect) {
+    //     validationError = <p className={classes.ValidationError}>Wprowadź poprawny adres e-mail</p>;
+    // }
+
+    // if(props.invalid && props.touched && !props.isPasswordCorrect) {
+    //     validationError = <p className={classes.ValidationError}>Hasło musi mieć co najmniej 6 znaków</p>;
+    // }
+    //
+    // if (props.invalid && props.touched && !props.isPasswordsEqual) {
+    //     validationError = <p className={classes.ValidationError}>Hasła nie sa identyczne</p>;
+    // }
 
     if (props.invalid && props.touched) {
         validationError = <p className={classes.ValidationError}>Wprowadź poprawne dane</p>
-    }
-
-    if (props.invalid && props.touched && props.isUsernameCorrect) {
-        validationOfUsername = <p className={classes.ValidationError}>Wprowadź poprawną nazwę użytkownika</p>;
-        validationError = validationOfUsername;
-    }
-
-    if (props.invalid && props.touched && props.isEmailCorrect) {
-        validationOfEmail = <p className={classes.ValidationError}>Wprowadź poprawny adres e-mail</p>;
-        validationError = validationOfEmail;
-    }
-
-    if(props.invalid && props.touched && props.isPasswordCorrect) {
-        validationOfPassword = <p className={classes.ValidationError}>Hasła nie są identyczne</p>;
-        validationError = validationOfPassword;
+        if (props.invalid && props.touched && !props.isEmailCorrect) {
+            validationError = <p className={classes.ValidationError}>Wprowadź poprawny adres e-mail</p>;
+        }
     }
 
     return (
