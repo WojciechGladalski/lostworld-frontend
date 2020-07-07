@@ -9,6 +9,7 @@ import Logout from './containers/Auth/Logout/Logout'
 import './App.module.css';
 import Profile from './components/Profile/Profile';
 import Countries from './components/Countries/Countries';
+import Country from "./components/Countries/Country";
 import SingleRelic from "./components/Relics/SingleRelic";
 import Articles from './components/Articles/Articles';
 import TestShow from './components/Test/TestShow';
@@ -29,6 +30,7 @@ const App = props => {
             <Route path="/register" component={Register}/>
             <Route path="/myProfile" component={Profile}/>
             <Route path="/countries" component={Countries}/>
+            <Route path="/country" component={Country}/>
             <Route path="/relics/{relic}" component={SingleRelic}/>
             <Route path="/articles" component={Articles}/>
             <Route path="/test/:id" component={TestShow}/>
@@ -45,6 +47,7 @@ const App = props => {
                 {/*<Route path="/register" component={Register}/>*/}
                 <Route path="/myProfile" component={Profile}/>
                 <Route path="/countries" component={Countries}/>
+                <Route path="/country" component={Country}/>
                 <Route path="/relics/{relic}" component={SingleRelic}/>
                 <Route path="/articles" component={Articles}/>
                 <Route path="/test/:id" component={TestShow}/>
