@@ -4,7 +4,7 @@
     z-index: 100;
     top: 0;
     background-color: green;
-    padding: 0 20px 0 80px;
+    padding: 0 100px 0 100px;
     border-bottom: 2px solid darkslategrey;
 }
 
@@ -25,16 +25,20 @@
 
 .Title {
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: top;
+    padding-top: 10px;
     font-family: Jokerman;
-    padding: 0 0 4px 25px;
-    letter-spacing: 16px;
+    letter-spacing: 13px;
+}
+
+.Title h2 {
+    font-size: 2.2rem;
 }
 
 .NavItems {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 460px);
+    width: calc(100% - 465px);
 }
 
 @media (max-width: 499px) {

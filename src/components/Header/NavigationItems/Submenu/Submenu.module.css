@@ -1,21 +1,23 @@
 .Submenu {
     position: relative;
     height: 30px;
-    margin: auto;
+    font-size: 0.875rem;
+    margin-top: -6px;
 }
 
 .Submenu ul {
     list-style: none;
     position: fixed;
-    left: 132px;
+    left: 115px;
 }
 
 .Submenu ul li {
-    width: 160px;
+    width: 145px;
     float: left;
     line-height: 30px;
     text-align: center;
     border-right: 2px solid gold;
+    cursor: pointer;
 }
 
 .Submenu ul li:hover {
