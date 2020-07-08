@@ -58,14 +58,12 @@ const App = props => {
     }
 
     return (
-        <div>
-            <Layout>
-                {/*<Suspense fallback={<Spinner/>}>*/}
-                {/*    {routes}*/}
-                {/*</Suspense>*/}
-                {routes}
-            </Layout>
-        </div>
+        <Layout>
+            {/*<Suspense fallback={<Spinner/>}>*/}
+            {/*    {routes}*/}
+            {/*</Suspense>*/}
+            {routes}
+        </Layout>
     );
 };
 
