@@ -1,7 +1,6 @@
 .Toolbar {
     width: 100%;
     position: fixed;
-    height: 106px;
     background-color: green;
     padding: 0 20px 0 80px;
     border-bottom: 2px solid darkslategrey;
@@ -9,31 +8,30 @@
 
 .Logo {
     display: inline-block;
-    padding: 1px 0;
-    margin-bottom: 24px;
-    vertical-align: middle;
+    position: relative;
+    z-index: 100;
+    vertical-align: bottom;
+    padding: 3px 0;
 }
 
 .Header {
     padding-left: 15px;
     display: inline-block;
     width: calc(100% - 100px);
+    position: relative;
 }
 
 .Title {
     display: inline-block;
     vertical-align: bottom;
     font-family: Jokerman;
-    padding: 0 0 5px 25px;
+    padding: 0 0 4px 25px;
     letter-spacing: 16px;
-    font-size: 38px;
-    width: 460px;
 }
 
 .NavItems {
     display: inline-block;
     text-align: right;
-    height: 70px;
     width: calc(100% - 460px);
 }
 
