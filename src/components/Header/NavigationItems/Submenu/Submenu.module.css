@@ -1,5 +1,6 @@
 .Submenu {
     position: relative;
+    display: none;
     height: 30px;
     font-size: 0.875rem;
     margin-top: -6px;
@@ -28,4 +29,10 @@
     color: white;
     text-decoration: none;
     font-family: Jokerman;
+}
+
+@media (min-width: 81.5rem) {
+    .Submenu {
+        display: block;
+    }
 }
