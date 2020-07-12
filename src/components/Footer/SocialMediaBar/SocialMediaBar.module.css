@@ -22,3 +22,9 @@
     padding: 0 10px;
     border-radius: 43%;
 }
+
+@media (max-width: 40rem) {
+    .SocialMedia {
+        display: block;
+    }
+}

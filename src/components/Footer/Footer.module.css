@@ -11,3 +11,9 @@
     top: 0;
     transform: translateY(15%);
 }
+
+@media (max-width: 40rem) {
+    .Copyright {
+        display: block;
+    }
+}
