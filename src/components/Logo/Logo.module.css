@@ -4,6 +4,11 @@
 
 .Image {
     float: left;
-    height: 96px;
+    height: 53px;
 }
 
+@media (min-width: 81.5rem) {
+    .Image {
+        height: 83px;
+    }
+}

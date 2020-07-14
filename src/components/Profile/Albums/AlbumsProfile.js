@@ -16,7 +16,7 @@ const AlbumsProfile = props => {
     let albums = <Spinner/>
 
     if (!props.loading) {
-        albums = props.articles.map(alb => (
+        albums = props.albums.map(alb => (
             <li>
                 {alb.albums}
             </li>

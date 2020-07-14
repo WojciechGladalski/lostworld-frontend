@@ -35,17 +35,27 @@ function amisawyer() {
 }
 
 const navigationItems = (props) => (
-    <ul className={classes.NavigationItems}>
-        {props.isAuth ? <NavigationItem link="/myProfile">PROFIL</NavigationItem> : null}
-        {!props.isAuth
-            ? <Aux>
-                <NavigationItem link="/login">ZALOGUJ</NavigationItem>
-                <NavigationItem link="/register">ZAREJESTRUJ</NavigationItem>
-              </Aux>
-            : <NavigationItem link="/logout">WYLOGUJ</NavigationItem>}
+    <Aux>
+        <button className={classes.NavButton}>
+            <span className={classes.NavButtonBar}></span>
+            <span className={classes.NavButtonBar}></span>
+            <span className={classes.NavButtonBar}></span>
+            <span className={classes.NavButtonMenu}>MENU</span>
 
-        {/*<button onClick={amisawyer}>AM I SAWYER?!</button>*/}
-    </ul>
+        </button>
+        <ul className={classes.NavigationItems}>
+            {props.isAuth ? <NavigationItem link="/myProfile">PROFIL</NavigationItem> : null}
+            {!props.isAuth
+                ? <Aux>
+                    <NavigationItem link="/login">ZALOGUJ</NavigationItem>
+                    <NavigationItem link="/register">ZAREJESTRUJ</NavigationItem>
+                </Aux>
+                : <NavigationItem link="/logout">WYLOGUJ</NavigationItem>}
+
+            {/*<button onClick={amisawyer}>AM I SAWYER?!</button>*/}
+        </ul>
+    </Aux>
+
 );
 
 export default navigationItems;

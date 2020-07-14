@@ -1,25 +1,24 @@
 .Submenu {
-    width: 856px;
+    position: relative;
+    display: none;
     height: 30px;
-    margin: auto;
+    font-size: 0.875rem;
+    margin-top: -6px;
 }
 
 .Submenu ul {
     list-style: none;
     position: fixed;
-    left: 132px;
+    left: 115px;
 }
 
 .Submenu ul li {
-    width: 160px;
-    background: green;
+    width: 145px;
     float: left;
-    height: 30px;
     line-height: 30px;
     text-align: center;
     border-right: 2px solid gold;
-    border-bottom: 1px solid darkslategrey;
-    margin-top: -1px;
+    cursor: pointer;
 }
 
 .Submenu ul li:hover {
@@ -30,4 +29,10 @@
     color: white;
     text-decoration: none;
     font-family: Jokerman;
+}
+
+@media (min-width: 81.5rem) {
+    .Submenu {
+        display: block;
+    }
 }
