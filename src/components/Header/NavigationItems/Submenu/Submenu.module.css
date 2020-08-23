@@ -1,38 +1,35 @@
 .Submenu {
-    position: relative;
-    display: none;
-    height: 30px;
-    font-size: 0.875rem;
-    margin-top: -6px;
+  position: relative;
+  display: none;
+  height: 30px;
+  font-size: 0.875rem;
+  margin-top: -6px;
 }
-
-.Submenu ul {
-    list-style: none;
-    position: fixed;
-    left: 115px;
-}
-
-.Submenu ul li {
-    width: 145px;
-    float: left;
-    line-height: 30px;
-    text-align: center;
-    border-right: 2px solid gold;
-    cursor: pointer;
-}
-
-.Submenu ul li:hover {
-    background: darkgreen;
-}
-
-.Submenu ul li a {
-    color: white;
-    text-decoration: none;
-    font-family: Jokerman;
-}
-
 @media (min-width: 81.5rem) {
-    .Submenu {
-        display: block;
-    }
+  .Submenu {
+    display: block;
+  }
 }
+.Submenu ul {
+  list-style: none;
+  position: fixed;
+  left: 115px;
+}
+.Submenu ul li {
+  width: 145px;
+  float: left;
+  line-height: 30px;
+  text-align: center;
+  border-right: 2px solid gold;
+  cursor: pointer;
+}
+.Submenu ul li:hover {
+  background: darkgreen;
+}
+.Submenu ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: Jokerman;
+}
+
+/*# sourceMappingURL=Submenu.module.css.map */

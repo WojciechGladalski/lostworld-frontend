@@ -5,14 +5,12 @@
   top: 0;
   background-color: green;
   border-bottom: 2px solid darkslategrey;
-}
-@media (min-width: 345px) {
-  .Toolbar {
+
+  @media (min-width: 345px) {
     padding: 0 15px;
   }
-}
-@media (min-width: 920px) {
-  .Toolbar {
+
+  @media (min-width: 920px) {
     padding-left: 100px;
   }
 }
@@ -23,14 +21,12 @@
   z-index: 100;
   vertical-align: sub;
   padding: 3px 0;
-}
-@media (min-width: 345px) {
-  .Logo {
+
+  @media (min-width: 345px) {
     padding-left: 0;
   }
-}
-@media (min-width: 1304px) {
-  .Logo {
+
+  @media (min-width: 1304px) {
     vertical-align: bottom;
   }
 }
@@ -40,9 +36,8 @@
   display: inline-block;
   width: calc(100% - 100px);
   position: relative;
-}
-@media (min-width: 451px) {
-  .Header {
+
+  @media (min-width: 451px) {
     padding-left: 15px;
   }
 }
@@ -55,22 +50,20 @@
   font-family: Jokerman;
   text-align: center;
   letter-spacing: 0.625rem;
-}
-.Title h2 {
-  font-size: 1.5rem;
-}
-@media (min-width: 920px) {
-  .Title h2 {
-    font-size: 2.2rem;
+
+  h2 {
+    font-size: 1.5rem;
+
+    @media (min-width: 920px) {
+      font-size: 2.2rem;
+    }
   }
-}
-@media (min-width: 466px) {
-  .Title {
+
+  @media (min-width: 466px) {
     vertical-align: top;
   }
-}
-@media (min-width: 920px) {
-  .Title {
+
+  @media (min-width: 920px) {
     width: 23.4rem;
     letter-spacing: 0.82rem;
   }
@@ -82,4 +75,4 @@
   width: calc(100% - 375px);
 }
 
-/*# sourceMappingURL=Toolbar.module.css.map */
+

@@ -1,0 +1,38 @@
+.Submenu {
+  position: relative;
+  display: none;
+  height: 30px;
+  font-size: 0.875rem;
+  margin-top: -6px;
+
+  @media (min-width: 81.5rem) {
+    display: block;
+  }
+  
+  ul {
+    list-style: none;
+    position: fixed;
+    left: 115px;
+
+    li {
+      width: 145px;
+      float: left;
+      line-height: 30px;
+      text-align: center;
+      border-right: 2px solid gold;
+      cursor: pointer;
+
+      &:hover {
+        background: darkgreen;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-family: Jokerman;
+      }
+    }
+  }
+}
+
+
