@@ -28,7 +28,7 @@ export const fetchArticles = () => {
 
         await axios({
             method: 'get',
-            url: `${API_URL}/users/getArticles`,
+            url: `${API_URL}/articles/checkAllForLoggedUser`,
             headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
         }).then(function (response) {
             //handle success
