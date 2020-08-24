@@ -20,6 +20,7 @@
     padding: 0.3rem 0.9rem;
     background-color: grey;
     border: 1px solid white;
+    border-radius: 5px;
 }
 
 .ProfileMenu li:last-child {
