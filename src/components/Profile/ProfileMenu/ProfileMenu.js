@@ -2,7 +2,7 @@ import React from 'react';
 import classes from "./ProfileMenu.module.css";
 
 const ProfileMenu = () => (
-    <div style={{margin: '-10px 0 0 -40px'}}>
+    <div className={classes.ProfileMenuContainer}>
         <ul className={classes.ProfileMenu}>
             <li>Mapa</li>
             <li>Plany podróży</li>

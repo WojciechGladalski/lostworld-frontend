@@ -1,27 +1,30 @@
 .Sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     height: 700px;
-    width: 250px;
-    left: 0;
-    background: linear-gradient(#eeeeee, dimgrey);
-    border-right: 2px solid black;
+    /*background: linear-gradient(#eeeeee, dimgrey);*/
+    /*border-right: 2px solid black;*/
     text-align: center;
-    vertical-align: center;
-    color: white;
-    float: left;
+    padding: 10px ;
 }
 
 .ProfilePhoto {
-    height: 250px;
-    width: 100%;
-    padding: 0;
-    color: black;
-    background-color: #cccccc;
-    border-bottom: 2px solid black;
-    box-sizing: border-box;
+    height: 200px;
+}
+
+.ProfilePhoto img {
+    height: 200px;
+    border-radius: 100%;
+    border: 2px solid darkgreen;
 }
 
 .Motto {
-    height: 100px;
+    padding: 20px 0;
+}
+
+.Motto span {
+    font-family: "Berlin Sans FB Demi", cursive;
 }
 
 .UserInfo {

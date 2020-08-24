@@ -10,3 +10,9 @@
 .TravelPlans div ul li {
     padding: 5px 0;
 }
+
+.TravelPlans h3 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}

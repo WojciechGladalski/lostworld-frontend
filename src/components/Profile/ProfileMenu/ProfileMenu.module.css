@@ -1,20 +1,33 @@
+.ProfileMenuContainer {
+    display: flex;
+    flex-direction: row;
+    margin: -20px 0 0 -40px;
+}
+
 .ProfileMenu {
     list-style: none;
     margin-left: -40px;
-    padding: -10px -40px;
+    display: flex;
+    flex-direction: row;
 }
 
 .ProfileMenu li {
     display: inline-block;
-    width: 10.6rem;
+    width: 9rem;
     font-size: 1.1rem;
     color: white;
     text-align: center;
     padding: 0.3rem 0.9rem;
     background-color: grey;
     border: 1px solid white;
+    border-radius: 5px;
 }
 
 .ProfileMenu li:last-child {
     width: 12.5rem;
+}
+
+.ProfileMenu li:hover {
+    background-color: #424242;
+    cursor: pointer;
 }

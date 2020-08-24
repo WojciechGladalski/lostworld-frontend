@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Profile.module.css'
-import Aux from '../../hoc/AuxComponent/AuxComponent';
 import ProfileSidebar from './ProfileSidebar/ProfileSidebar';
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import TravelPlansProfile from "./TravelPlans/TravelPlansProfile";
@@ -10,7 +9,7 @@ import AlbumsProfile from "./Albums/AlbumsProfile";
 import FollowingUsersProfile from "./Following/FollowingUsersProfile";
 
 const profile = props => (
-    <Aux>
+    <div className={classes.ProfileContainer}>
         <ProfileSidebar/>
         <div className={classes.ProfileContent}>
             <ProfileMenu/>
@@ -20,9 +19,7 @@ const profile = props => (
             <ArticlesProfile/>
             <FollowingUsersProfile/>
         </div>
-        {/*<div style={{clear: 'both'}}></div>*/}
-
-    </Aux>
+    </div>
 
 );
 

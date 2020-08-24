@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import classes from "./ArticlesProfile.module.css";
 import * as actions from '../../../store/actions/index'
+import Button from "react-bootstrap/Button";
 import Spinner from '../../UI/Spinner/Spinner';
 
 const ArticlesProfile = props => {
@@ -24,7 +25,8 @@ const ArticlesProfile = props => {
     return (
 
         <div className={classes.Articles}>
-            <h3>MOJE ARTYKUŁY</h3><a href="addArticle">(dodaj)</a>
+            <h3>MOJE ARTYKUŁY</h3>
+            <Button style={{marginBottom: '5px'}} type="button" variant="secondary">Dodaj</Button>
             <div>
                 <ul>
                     {articles}

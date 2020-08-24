@@ -95,8 +95,8 @@ const AddPhotoForm = (props) => {
 
     return (
         <Aux>
-            <h3 style={{display: 'inline-block', verticalAlign: 'middle'}}>MOJE ALBUMY</h3>
-            <Button type="button" variant="secondary" onClick={() => setModalShow(true)}>Dodaj</Button>
+            <h3 style={{display: 'inline-block', verticalAlign: 'middle', paddingBottom: '5px'}}>MOJE ALBUMY</h3>
+            <Button style={{marginBottom: '5px'}} type="button" variant="secondary" onClick={() => setModalShow(true)}>Dodaj</Button>
 
             <MyVerticallyCenteredModal
                 show={modalShow}

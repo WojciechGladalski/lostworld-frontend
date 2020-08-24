@@ -26,7 +26,6 @@ const AlbumsProfile = props => {
 
     return (
         <div className={classes.Albums}>
-            {/*<h3>MOJE ALBUMY</h3><a href="/test">(dodaj)</a>*/}
             <AddPhotoForm/>
             <div>
                 <ul>
