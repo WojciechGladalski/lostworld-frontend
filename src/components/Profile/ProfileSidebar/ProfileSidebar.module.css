@@ -1,13 +1,12 @@
 .Sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     height: 700px;
-    width: 250px;
-    left: 0;
     background: linear-gradient(#eeeeee, dimgrey);
     border-right: 2px solid black;
     text-align: center;
-    vertical-align: center;
     color: white;
-    float: left;
 }
 
 .ProfilePhoto {

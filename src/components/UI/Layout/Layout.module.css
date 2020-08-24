@@ -2,4 +2,5 @@
     background: linear-gradient(#eeeeee, #cccccc);
     background-size: cover;
     margin-top: 91px;
+    display: flex;
 }

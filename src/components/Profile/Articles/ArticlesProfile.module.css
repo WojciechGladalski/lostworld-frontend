@@ -3,3 +3,9 @@
     background-color: #eeeeee;
     border: 2px solid #bbbbbb;
 }
+
+.Articles h3 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
